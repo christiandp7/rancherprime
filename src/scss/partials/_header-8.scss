@@ -1,3 +1,11 @@
 .template-index .header-type-8 .site-header {
   top: 60px;
 }
+
+.header-type-8 {
+  .sticky-wrapper.is-sticky {
+    .menu-tool ul li a {
+      color: #b78566 !important;
+    }
+  }
+}

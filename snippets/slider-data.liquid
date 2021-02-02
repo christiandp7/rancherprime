@@ -15,11 +15,11 @@
 {% endif %}
 {% if  block.settings.link != blank %} </a> {% endif %}
 
-
+ 
 
 
 <div class="slider-content slider-content-bg" style="">
-  <div class="container">
+  <div class="container slider-content__container-{{ block.settings.container_alignment }} text-{{ block.settings.text_alignment }}">
     <div class="slide_left" style="">
 
       {% if block.settings.logo_img != blank %}
