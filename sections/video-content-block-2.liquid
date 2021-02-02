@@ -1,0 +1,221 @@
+<div data-section-id="{{ section.id }}" data-section-type="video-content-block-2" class="video-content-block-2">  
+
+  <div class="grid-uniform" style="">    
+    <div class="container">  
+      
+      {% if section.settings.title != blank %}
+      <div class="border-title-img wow fadeInDown animated">   
+        {% if section.settings.title_img != blank %}
+        <div class="title_img">
+          <img src="{{ section.settings.title_img | img_url: '1920X' }}" alt="{{ section.settings.title_1 }}" />
+        </div>
+        {% endif%}  
+        <div class="border-title wow fadeInDown animated">
+          {% if section.settings.description_1 != blank %} <h5 class="small-title" style="color:{{ section.settings.desc_color }}">{{ section.settings.description_1 }}</h5>{% endif %}        
+          
+          <h2 style="color:{{section.settings.maintitle_color}}">{{ section.settings.title }}</h2>
+         
+        </div>
+      </div>
+       {% endif %}
+      
+      <div class="video-banner-type-1-block" style="background:{{section.settings.video_blockbg_color}}">   
+        <div class="grid__item">
+          {% if section.settings.video_url != blank %}
+          <div class="intro-video grid__item wide--one-half post-large--one-half large--one-half medium--grd__item wow slideInLeft animated">            
+            <div class="intro-video-text">
+              <a href="#inline_content" class="video-player inline">
+                <iframe width="980" height="500" src="{{ section.settings.video_url }}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>             </a>              
+            </div>
+            <div style='display:none'>
+              <div id='inline_content'>
+              </div>
+            </div>
+          </div>
+          {% endif%}
+
+
+          <div class="grid__item wide--one-half post-large--one-half large--one-half medium--grd__item wow fadeInRight animated">
+            <div class="video-banner-type-1-content  "> 
+              {% if section.settings.titleshadow_1 != blank %}
+              <h5 style="color:{{ section.settings.shadowtext_color }}">{{ section.settings.titleshadow_1 }}</h5>
+              {% endif %}
+               {% if section.settings.text_1 != blank %}
+              <h3 style="color:{{ section.settings.text_color }}">{{ section.settings.text_1 }}</h3>
+              {% endif %}
+              {% if section.settings.title_1 != blank %}
+              <h3 style="color:{{ section.settings.title_color }}">{{ section.settings.title_1 }}</h3>
+              {% endif %}
+             
+{% if section.settings.desc_1 != blank  %}  
+                  <p style="color:{{ section.settings.desc_color_1 }};" class="desc">{{ section.settings.desc_1 }}</p>
+                  {% endif %} 
+              {% if section.settings.button_1 != blank %}
+              <a class="btn" href="{{ section.settings.link_1 }}">{{ section.settings.button_1 }}</a>    
+              {% endif %}         
+            </div>
+          </div>  
+        </div>
+      </div> 
+    </div>
+  </div>
+  <div class="dt-sc-hr-invisible-large"></div>
+</div>
+
+
+
+<style>
+
+  .video-content-block-2  .btn {border:1px solid {{section.settings.button_bg_clr}};color:{{section.settings.button_txt_clr}};}
+        .video-content-block-2  .btn:hover {border:1px solid {{section.settings.button_hoverbg_clr}};background:{{section.settings.button_hoverbg_clr}};color:{{section.settings.button_hovertxt_clr}};}
+        
+
+
+</style>
+
+
+
+
+{% schema %}
+{
+"name": "Video Banner",
+"class": "index-section",
+"settings": [
+{
+"type": "color",
+"id": "video_blockbg_color",
+"label": "Video Bg Color",
+"default":"#000"
+},
+
+{
+"type": "image_picker",
+"id": "title_img",
+"label": "Title Image",
+"info": "Size: 570x500"
+},
+{
+"type": "text",
+"id": "title",
+"label": "Heading"
+},
+{
+"type": "color",
+"id": "maintitle_color",
+"label": "Main Title Color",
+"default":"#000"
+},
+{
+"type": "textarea",
+"id": "description_1",
+"label": "Description"
+
+},
+{
+"type": "color",
+"id": "desc_color",
+"label": "Color",
+"default":"#000"
+},
+{
+          "type": "text",
+          "id": "desc_1",
+          "label": "Description 1"          
+        },
+
+{
+          "type": "color",
+          "id": "desc_color_1",
+          "label": "Color 1",
+		  "default":"#000"
+        },
+{
+"type": "text",
+"id": "video_url",
+"label": "Video url",
+"default": "https://www.youtube.com/embed/vgr2y70Vlk0"
+},
+{
+"type": "text",
+"id": "title_1",
+"label": "Heading"
+},
+{
+"type": "color",
+"id": "title_color",
+"label":"Title color",
+"default": "#000"
+},
+
+{
+"type": "text",
+"id": "titleshadow_1",
+"label": "Sub Heading"
+},
+{
+"type": "color",
+"id": "shadowtext_color",
+"label":"Text color",
+"default": "#000"
+},
+{
+"type": "textarea",
+"id": "text_1",
+"label": "Description"
+},
+{
+"type": "color",
+"id": "text_color",
+"label":"Text color",
+"default": "#000"
+},
+{
+"type": "text",
+"id": "button_1",
+"label": "Button text"
+},
+{
+"type": "url",
+"id": "link_1",
+"label": "Link URL"
+},
+{
+"type": "color",
+"id": "button_bg_clr",
+"label": "Button Border Color",
+"default":"#fff"	
+},
+{
+"type": "color",
+"id": "button_txt_clr",
+"label": "Button Text Color",
+"default":"#fff"	
+},
+{
+"type": "color",
+"id": "button_hoverbg_clr",
+"label": "Button Hover Bg Color",
+"default":"#fff"	
+},
+{
+"type": "color",
+"id": "button_hovertxt_clr",
+"label": "Button Hover Text Color",
+"default":"#fff"	
+}
+],
+"presets": [
+{
+"name": "Video Banner",
+"category": "Video",
+"blocks": []
+}
+]
+}
+{% endschema %}
+
+{% javascript %}
+$(document).ready(function(){
+$(".inline").colorbox({inline:true, width:"50%"});
+});
+{% endjavascript %}

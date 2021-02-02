@@ -1,0 +1,450 @@
+<div data-section-id="{{ section.id }}"  data-section-type="home-product-grid-type-9" class="home-product-grid-type-9">
+  <div class="container">
+    {%- assign collection = collections[section.settings.collection] -%}
+    {%- assign limit = section.settings.grid | times: section.settings.rows -%}  
+    {%- assign tp = section.settings.total_products  -%}
+
+
+
+    {% if section.settings.heading != blank    %}  
+    <div class="section-header section-header--small">
+      <div class="border-title"> 
+
+        <h2 style="color:{{ section.settings.heading_color }};">{{ section.settings.heading }}</h2>
+        {% if section.settings.title_img != blank %}
+        <div class="tilte_img">
+          <img src="{{ section.settings.title_img | img_url: '167x' }}" alt="" title=""  />
+        </div>
+        {% endif %}
+
+
+
+        {% if section.settings.description != blank  %}  
+        <div class="short-desc">  <p style="color:{{ section.settings.description_color }};">{{ section.settings.description }}</p></div>
+        {% endif %} 
+      </div>
+    </div>
+    {% endif %} 
+
+
+    <div class="load-wrapper">                        		
+      {%- assign grid_item_width = ' ' -%}            
+      <div class="flexcontainer">  
+
+        {% if section.settings.image-position == 'left' %}
+        <div class="flex_item image-on-left">
+          <div class="ovrly29">
+            <div class="collection_title">
+              {% if section.settings.title != blank %}
+              <div class="collection-subtitle">
+
+
+                <h2 class="section-header__title" style="color:{{ section.settings.title_clr }};">    
+                  {{ section.settings.title }}
+                </h2>
+
+
+                {% if section.settings.small_title != blank %}
+                <h5 class="section-header__title" style="color:{{ section.settings.small_title_clr }};">    
+                  {{ section.settings.small_title }}
+                </h5>
+                {% endif %}
+
+              </div>
+              {% endif %} 
+
+
+              {% if section.settings.button_1 != blank %}
+              <div class="collection-btn">
+                <a class="btn" href="{{ section.settings.link_1 }}" >{{ section.settings.button_1 }}</a>    
+              </div>
+              {% endif %}
+
+
+            </div>
+            {% if section.settings.image != blank %}
+            <img src="{{ section.settings.image | img_url: '960X' }}" alt="{{ section.settings.image }}" />
+            <div class="ovrly"></div>
+            {% else %}
+            <img src="//via.placeholder.com/960x650">
+            {% endif%}  
+          </div>
+        </div>
+        ,
+        {% endif %}
+
+        {% if section.settings.image-position == 'left' or section.settings.image-position == 'right'  %}
+        {%- assign grid_mid_width = 'wide--one-half post-large--one-half large--one-half medium--grid__item small-grid__item' -%}     
+        {% else %}
+        {%- assign grid_mid_width = ' ' -%}
+        {% endif%}   
+
+
+        <div class="flex_item {% if section.settings.image-position == 'left' %} middle-section {% endif %} {% if section.settings.image-position == 'right' %} right-section {% endif %}">   
+
+          {% if section.settings.title != blank %}
+          <h3 class="section-header__title" style="color:{{ section.settings.product_section_title_clr }};">    
+            {{ section.settings.product_section_title }}
+          </h3>
+          {% endif %} 
+          <div class="nav-type9__items {{ section.id }}" ></div>
+
+
+          <ul class="type9__items  {{ section.id }} owl-carousel owl-theme">
+            {% for product in collection.products     %}
+            {% include 'home-product-grid-item', grid_item_width:grid_item_width %}          
+            {% else %}
+            {% for i in (1..8) %}
+            <li class="grid__item item-row  on-sale" id="product-{{ i }}">
+              <div class="products">
+                <div class="product-container">
+                  <a href="#" class="grid-link"> 
+                    {% if forloop.index == 3 %}
+                    <div class="featured-tag">
+                      <span class="badge badge--sale">
+                        <i class="fa fa-star"></i>
+                        <span class="gift-tag badge__text{% if sale_text.size > 7 %} badge__text--small{% endif %}">{{ 'products.product.sale' | t }}</span>
+                      </span>
+                    </div>{% endif %}
+
+                    <div class="reveal"> 
+                      {% capture current %}{% cycle 1, 2, 3, 4, 5, 6 %}{% endcapture %}
+                      {{ 'product-' | append: current | placeholder_svg_tag: 'placeholder-svg' }} 
+                    </div>
+                  </a>
+                  <div class="ImageWrapper">
+                    <div class="product-button">
+                      <div class="button-row-1">
+                        <a href="#" class="quick-view-text"> 
+                          <i class="zmdi zmdi-eye"></i>
+                        </a>
+                        <a href="{{ product.url }}">                      
+                          <i class="zmdi zmdi-link"></i>
+                        </a>  
+                      </div>
+                      <div class="button-row-2">
+                        <form action="#" method="post" class="variants clearfix" id="cart-form-6529189125">
+                          <input type="hidden" name="id" value="21661289093">
+                          <a href="#" class="add-cart-btn"><i class="zmdi zmdi-shopping-cart"></i> </a>
+                        </form>
+                        <a href="/account/login" class="wishlist"><i class="zmdi zmdi-favorite-outline"></i></a> 
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="product-detail"> 
+                  <a href="#" class="grid-link__title">Sample title {{ i }}</a>
+
+                  <div class="grid-link__meta">
+                    <div class="product_price"> <span class="money" data-currency-usd="$320.00">$0.00</span> </div>
+                    <del class="grid-link__sale_price"><span class="money" data-currency-usd="$756.00">$0.00</span></del> </div>
+                  <span class="spr-badge" id="spr_badge_6529189125" data-rating="0.0"> 
+                    <span class="spr-starrating spr-badge-starrating"><i class="spr-icon spr-icon-star-empty" style="color: #f05315;"></i><i class="spr-icon spr-icon-star-empty" style="color: #f05315;"></i><i class="spr-icon spr-icon-star-empty" style="color: #f05315;"></i><i class="spr-icon spr-icon-star-empty" style="color: #f05315;"></i><i class="spr-icon spr-icon-star-empty" style="color: #f05315;"></i></span> <span class="spr-badge-caption"> </span> </span>
+
+                </div>
+              </div>
+            </li>
+            {% endfor %} 
+            {% endfor %}
+          </ul>
+
+        </div>
+        {% if section.settings.image-position == 'right' %}
+        <div class="flex_item image-on-right">
+          <div class="ovrly29">
+            <div class="collection_title">
+              {% if section.settings.title != blank %}
+              <div class="collection-subtitle">
+
+
+                <h2 class="section-header__title" style="color:{{ section.settings.title_clr }};">    
+                  {{ section.settings.title }}
+                </h2>
+                {% endif %}    
+
+                {% if section.settings.small_title != blank %}
+                <h5 class="section-header__title" style="color:{{ section.settings.small_title_clr }};">    
+                  {{ section.settings.small_title }}
+                </h5>
+
+
+              </div>
+              {% endif %} 
+
+              {% if section.settings.button_1 != blank %}
+              <div class="collection-btn">
+                <a class="btn" href="{{ section.settings.link_1 }}" >{{ section.settings.button_1 }}</a>    
+              </div>
+              {% endif %}
+
+
+
+            </div>
+            {% if section.settings.image != blank %}
+            <img src="{{ section.settings.image | img_url: '735X' }}" alt="{{ section.settings.image }}" />
+            <div class="ovrly"></div>
+            {% else %}
+            <img src="//via.placeholder.com/735x571">
+            {% endif%}                    
+          </div>
+        </div>
+
+        {% endif %}
+        <style>
+          {% if section.settings.overlay_1_use %} .home-product-grid-type-9 .ovrly29 .ovrly { background:{{ section.settings.overlay_1 | color_modify: 'alpha', 0.7 }};  } {% endif %}
+
+          .home-product-grid-type-9 .collection_title .btn { border:2px solid {{ section.settings.button_border }};color:{{ section.settings.button_color }}; }
+          .home-product-grid-type-9 .collection_title .btn:hover { border-color: {{ section.settings.button_bg_hover }};background:{{ section.settings.button_bg_hover }};color:{{ section.settings.button_hover_color }}; }
+
+
+          .home-product-grid-type-9 .collection_title {background:{{section.settings.overlay_bg_clr | color_modify: 'alpha', 0.8 }};}
+
+
+
+
+        </style> 
+        <script type="text/javascript">       
+          $(document).ready(function(){
+            var type9_products = $('.type9__items.{{ section.id }}');
+                                   type9_products.owlCarousel({
+                                   loop:false,
+                                   margin:0,
+                                   nav:true,
+                                   navContainer: ".nav-type9__items.{{ section.id }}",
+                                   navText: ['<i class="btn fas fa-chevron-left"></i>','<i class="btn fas fa-chevron-right"></i>'],
+                                   dots: false,
+                                   autoplay: false,
+                                   autoplayTimeout: 3000,
+                                   responsive:{
+                                   0:{
+                                   items:2
+                                   },
+                                   600:{
+                                   items:2
+                                   },
+                                   1600:{
+                                   items:{{ section.settings.items }}
+                                   }
+                                   }
+                                   });
+          });
+
+        </script>
+
+
+      </div>
+    </div>
+  </div>
+  <div class="dt-sc-hr-invisible-large"></div>
+</div>
+{% schema %}
+{
+"name": "Home Product Grid 9",
+"class":"index-section",
+"settings": [  
+{
+"type": "image_picker",
+"id": "image",
+"label": "Image",
+"info": "Size: 735x571"
+
+},
+{
+"type": "text",
+"id": "heading",
+"label": "Heading"          
+},
+{
+"type": "color",
+"id": "heading_color",
+"label": "Color",
+"default":"#000"
+},
+{
+"type": "color",
+"id": "description_color",
+"label": "Color",
+"default":"#000"
+},
+{
+"type": "image_picker",
+"id": "title_img",
+"label": "Title Image",
+"info": "Size: 55x17"
+},    
+{
+"type": "text",
+"id": "title",
+"label": "Heading"
+
+},	
+{
+"type": "color",
+"id": "title_clr",
+"label": "Heading Color",
+"default":"#000"
+
+},	
+{
+"type": "text",
+"id": "small_title",
+"label": "Small Heading"
+
+},
+{
+"type": "color",
+"id": "small_title_clr",
+"label": "Small Heading Color",
+"default":"#000"
+},	
+{
+"type": "color",
+"id": "overlay_bg_clr",
+"label": "Overlay Bg Color",
+"default":"#fff"
+},
+{
+"type": "text",
+"id": "button_1",
+"label": "Link text"
+},
+{
+"type": "color",
+"id": "button_bg",
+"label": "Button BG",
+"default":"#fff"
+},
+{
+"type": "color",
+"id": "button_border",
+"label": "Button Border",
+"default":"#fff"
+},
+{
+"type": "color",
+"id": "button_color",
+"label": "Button Color",
+"default":"#333333"
+
+},
+{
+"type": "color",
+"id": "button_bg_hover",
+"label": "Hover Button Bg",
+"default":"#dc2c5c"
+
+},
+
+{
+"type": "color",
+"id": "button_hover_color",
+"label": "Hover Button Color",
+"default":"#fff"
+},
+{
+"type": "url",
+"id": "link_1",
+"label": "Link URL"
+},
+
+{
+"type": "header",
+"content": "Product Section"
+},
+{
+"type": "text",
+"id": "product_section_title",
+"label": "Title"
+},
+{
+"type": "color",
+"id": "product_section_title_clr",
+"label": "Title Color",
+"default":"#000"
+},
+{
+"id": "collection",
+"type": "collection",
+"label": "Collection"
+},
+{
+"type": "select",
+"id": "items",
+"label": "Carousel Items",
+"default": "left",
+"options": [
+{
+"value": "1",
+"label": "1"
+},        
+{
+"value": "2",
+"label": "2"
+},
+{
+"value": "3",
+"label": "3"
+},
+{
+"value": "4",
+"label": "4"
+},
+{
+"value": "5",
+"label": "5"
+},
+{
+"value": "6",
+"label": "6"
+}
+],
+"default": "2",
+"info": "2"
+},
+{
+"type": "checkbox",
+"id": "overlay_1_use",
+"label": "Use Overlay ?"
+},
+{
+"type": "color",
+"id": "overlay_1",
+"label": "Overlay",
+"default": "#fff"
+},
+{
+"type": "select",
+"id": "image-position",
+"label": "Image alignment",
+"default": "left",
+"options": [
+{
+"value": "left",
+"label": "Left"
+},
+{
+"value": "right",
+"label": "Right"
+},
+{
+"value": "none",
+"label": "None"
+} 
+]
+}
+
+
+],
+"presets": [
+{
+"name": "Home Product Grid 9",
+"category": "Collection"
+}
+]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+

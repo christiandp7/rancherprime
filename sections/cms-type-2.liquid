@@ -1,0 +1,150 @@
+<div data-section-id="{{ section.id }}" data-section-type="cms-type-2" class="cms-type-2">  
+
+  <div class="grid-uniform">    
+    <div class="cms-type-2-block parallax " style= " {% if section.settings.image_1 != blank %}background-image:url('{{ section.settings.image_1 | img_url: '1920X' }}');background-repeat:no-repeat;background-size:cover; {% else %}background-color:{{section.settings.background_color}};{% endif%};">
+      <div class="container">
+        <div class="cms-type-2-content wow fadeInUp animated">  
+
+
+          {% if section.settings.title_1 != blank %}
+          <h2 style="color:{{ section.settings.title_color }}">{{ section.settings.title_1 }}</h2>
+          {% endif %}
+          {% if section.settings.text_1 != blank %}
+          <p style="color:{{ section.settings.text_color }}">{{ section.settings.text_1 }}</p>
+          {% endif %}
+          {% if section.settings.titleshadow_1 != blank %}
+          <h3 style="color:{{ section.settings.shadowtext_color }}">{{ section.settings.titleshadow_1 }}</h3>
+          {% endif %}
+
+          {% if section.settings.button_1 != blank %}
+          <div class="cms-type-1-btn">
+
+            <a class="btn" href="{{ section.settings.link_1 }}" style="color:{{ section.settings.button_txt_color }};border:none;background-color:{{ section.settings.button_bg_color }};">{{ section.settings.button_1 }}</a>    
+
+          </div>   
+          {% endif %}
+        </div>
+        <style>
+          .cms-type-2 .btn:hover { background-color:{{ section.settings.hover_button_bg_color }} !important; color:{{ section.settings.hover_button_txt_color }} !important;}
+          .cms-type-2 .btn.btn-2:hover { background-color:{{ section.settings.hover_button_bg_color_2 }} !important; color:{{ section.settings.hover_button_txt_color_2 }} !important;}
+
+          {% if section.settings.show_overlay_bg_clr %}
+          .cms-type-2 .cms-type-2-block::before{background-color:{{ section.settings.background_color }};}
+          {% endif %}
+
+
+        </style>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+<div class="dt-sc-hr-invisible-large"></div>
+{% schema %}
+{
+"name": "Content Banner",
+"class": "index-section",
+"settings": [
+{
+"type": "image_picker",
+"id": "image_1",
+"label": "Image",
+"info": "Size: 1920x1268"
+},
+{
+"type": "checkbox",
+"id": "show_overlay_bg_clr",
+"label": "Show Overlay Bg Color"
+},
+{
+"type": "color",
+"id": "background_color",
+"label":"Bckground color",
+"default": "#000"
+},
+
+{
+"type": "text",
+"id": "title_1",
+"label": "Heading"
+},
+{
+"type": "color",
+"id": "title_color",
+"label":"Title color",
+"default": "#000"
+},
+{
+"type": "textarea",
+"id": "text_1",
+"label": "Description"
+},
+{
+"type": "color",
+"id": "text_color",
+"label":"Text color",
+"default": "#000"
+},
+{
+"type": "text",
+"id": "titleshadow_1",
+"label": "Sub Heading"
+},
+{
+"type": "color",
+"id": "shadowtext_color",
+"label":"Text color",
+"default": "#000"
+},
+{
+"type": "text",
+"id": "button_1",
+"label": "Button text"
+},
+{
+"type": "color",
+"id": "button_bg_color",
+"label":"Background color",
+"default": "#000"
+},
+{
+"type": "color",
+"id": "button_txt_color",
+"label":"Text color",
+"default": "#fff"
+},
+{
+"type": "color",
+"id": "hover_button_bg_color",
+"label":"Hover Background color",
+"default": "#000"
+},
+{
+"type": "color",
+"id": "hover_button_txt_color",
+"label":"Hover Text color",
+"default": "#fff"
+},
+{
+"type": "url",
+"id": "link_1",
+"label": "Link URL"
+}
+
+],
+"presets": [
+{
+"name": "Content Banner",
+"category": "Text",
+"blocks": []
+}
+]
+}
+{% endschema %}
+
+
+
+
+
+

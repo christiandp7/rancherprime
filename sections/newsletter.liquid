@@ -1,0 +1,132 @@
+<div data-section-id="{{ section.id }}"  data-section-type="newsletter-block">  
+  <div class="newsletter-section" style="float:left;width:100%;text-align:center;margin:auto;padding: 8% 3%;{% if section.settings.image_1 != blank %} background-image:url('{{ section.settings.image_1 | img_url: '1920X' }}');background-repeat:no-repeat;background-size:cover;background-position:center  {% else %}background-color:{{section.settings.background_color}}{% endif%};">
+    <div class="overlay"></div>
+    <div class="container">
+      {% if section.settings.title != blank or section.settings.text != blank %}
+      <div class="border-title">
+        {% endif %}
+        <h2 class="newslet_title" style="color:{{ section.settings.title_color }};">     
+          {{ section.settings.title }}
+        </h2>    
+        {% if section.settings.text != blank %}
+        <div class="short-desc">
+          <p style="color:{{ section.settings.text_color }};"> {{ section.settings.text }}</p>
+        </div>
+        {% endif %}
+        {% if section.settings.title != blank or section.settings.text != blank %}
+      </div>
+      {% endif %}
+
+      <div class="mc-embedded-subscribe-form">
+        {% if settings.newsletter_form_action != blank %}
+        <form action="{{ settings.newsletter_form_action }}" method="post"  name="mc-embedded-subscribe-form" target="_blank" class="input-group">
+          <input type="email" value="{% if customer %}{{ customer.email }}{% endif %}" placeholder="{{ 'general.newsletter_form.newsletter_email' | t }}" name="EMAIL" class="mail" aria-label="{{ 'general.newsletter_form.newsletter_email' | t }}">
+          <button type="submit" class="btn subscribe" name="subscribe" value=""  style="background:{{ section.settings.btn_bg_color }};color:{{ section.settings.btn_text_color }};"> {{ section.settings.button }}</button>    
+        </form>
+        {% else %}
+        {% form 'customer' %}
+        {% if form.posted_successfully? %}
+        <p class="note form-success">{{ 'general.newsletter_form.mailing_list_success_message' | t }}</p>
+        {% else %}
+
+        <input type="email" value="{% if customer %}{{ customer.email }}{% endif %}" placeholder="{{ 'general.newsletter_form.newsletter_email' | t }}" name="contact[email]" class="mail" aria-label="{{ 'general.newsletter_form.newsletter_email' | t }}" >
+        <input type="hidden" name="contact[tags]" value="newsletter">
+        <button type="submit" class="btn subscribe" name="subscribe" value="" style="background:{{ section.settings.btn_bg_color }};color:{{ section.settings.btn_text_color }};">{{ section.settings.button }}</button>          
+
+        {% endif %}
+        {{ form.errors | default_errors }}
+        {% endform %}  
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+
+  .newsletter-section .btn:hover { background:{{ section.settings.btn_bg_hover_color }} !important;color:{{ section.settings.btn_hover_text_color }} !important;}
+</style>
+
+
+{% schema %}
+{
+  "name": "Newsletter",
+  "class": "index-section",  
+  "settings": [
+ {
+  "type": "image_picker",
+  "id": "image_1",
+  "label": "Image",
+  "info": "Size: 1750x720"
+  },
+  {
+  "type": "color",
+  "id": "background_color",
+  "label":"Bckground color",
+  "default": "#000"
+  },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Newsletter"
+    },
+{
+  	"type": "color",
+      "id": "title_color",
+      "label": "Heading",
+      "default": "#000"
+    },
+ 	{
+      "type": "textarea",
+      "id": "text",
+      "label": "Description",
+     "default": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit."
+    },
+	{
+	"type": "color",
+      "id": "text_color",
+      "label": "Description",
+      "default": "#000"
+    },
+	{
+      "type": "text",
+      "id": "button",
+      "label": "Button",
+      "default": "Subscribe"
+    },
+{
+"type": "color",
+      "id": "btn_bg_color",
+      "label": "Bg",
+      "default": "#000"
+    },
+{
+"type": "color",
+      "id": "btn_text_color",
+      "label": "Color",
+      "default": "#fff"
+    },
+{
+"type": "color",
+      "id": "btn_bg_hover_color",
+      "label": "Bg Hover",
+      "default": "#dc1d24"
+    },
+{
+"type": "color",
+      "id": "btn_hover_text_color",
+      "label": "Hover Color",
+      "default": "#fff"
+    }
+
+  ],  
+  "presets": [
+    {
+      "name": "Newsletter",
+      "category": "Form",
+      "blocks": [ ]
+    }
+  ]
+}
+{% endschema %}

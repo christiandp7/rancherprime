@@ -1,0 +1,692 @@
+<div data-section-id="{{ section.id }}" data-section-type="grid-banner-type-20" class="grid-banner-type-20">   
+  <div class ="container">
+    
+    
+    <div class="grid__item">
+    
+    
+   {% if section.settings.title != blank %}
+      <div class="border-title-img wow fadeInDown animated">   
+          
+        <div class="border-title wow fadeInDown animated">
+          {% if section.settings.description_1 != blank %} <h5 class="small-title" style="color:{{ section.settings.desc_color }}">{{ section.settings.description_1 }}</h5>{% endif %}        
+          
+          <h2 style="color:{{section.settings.maintitle_color}}">{{ section.settings.title }}</h2>
+         {% if section.settings.title_img != blank %}
+        <div class="title_img">
+          <img src="{{ section.settings.title_img | img_url: '167X' }}" alt="{{ section.settings.title_1 }}" />
+        </div>
+        {% endif%}
+        </div>
+      </div>
+       {% endif %}
+    
+    
+    </div>
+    
+    
+    
+    
+  <div class="grid-uniform featuredItems">  
+
+    {% if section.blocks.size > 0 %}  
+    {% assign row = "wide--one-quarter post-large--one-quarter large--one-quarter medium--grid__item small--grid__item small--text-center" %}
+    {% assign row1 = "wide--two-quarters post-large--two-quarters large--two-quarters medium--grid__item small--grid__item small--text-center" %}
+    {% else %}
+    {% assign row = "wide--one-half post-large--one-half large--one-half medium--one-half small--grid__item small--text-center" %}
+    {% endif %}
+
+
+    <div class="grid__item {{ row }}">
+      <div class="middle-top grid__item"> 
+        <div class="ovrly31 overlay_2">
+          {% if section.settings.link_1 != blank %}<a class="banner_half_img" href="{{ section.settings.link_1 }}">{% endif%}
+          {% if section.settings.image_1 != blank %}
+          <img src="{{ section.settings.image_1 | img_url: '1920X' }}" alt="{{ section.settings.title_1 }}" />
+          <div class="ovrly"></div>
+          {% else %}
+          <img src="//via.placeholder.com/768x540">
+          {% endif%}           
+          {% if section.settings.link_1 != blank %}  </a>
+
+          {% endif%}
+          <div class="featured-content">       
+            {% if section.settings.title_1 != blank %}
+            <h6 style="color:{{ section.settings.title_1_clr }};">{{ section.settings.title_1 }}</h6>
+            {% endif %}
+            {% if section.settings.text_1 != blank %}
+            <h3 style="color:{{ section.settings.text_1_clr }};">{{ section.settings.text_1}}</h3>    
+            {% endif %}
+            
+            {% if section.settings.button_1 != blank %}
+            <div class="grid-right-btn">
+            <a class="btn one" href="{{ section.settings.link_1 }}" style="">{{ section.settings.button_1}}</a>  
+            </div>
+            {% endif %}               
+            
+            
+            
+          </div> 
+        </div>
+      </div>
+      <div class="middle-bottom grid__item">        
+        <div class="ovrly31 overlay_3">
+          {% if section.settings.link_2 != blank %}<a class="banner_half_img" href="{{ section.settings.link_2 }}">{% endif%}
+          {% if section.settings.image_2 != blank %}
+          <img src="{{ section.settings.image_2 | img_url: '1920X' }}" alt="{{ section.settings.title_2 }}" />
+          <div class="ovrly"></div>
+          {% else %}
+
+          <img src="//via.placeholder.com/570x400">
+          {% endif%}           
+          {% if section.settings.link_2 != blank %}  </a>
+
+          {% endif%}
+          <div class="featured-content">       
+            {% if section.settings.title_2 != blank %}
+            <h6 style="color:{{ section.settings.title_2_clr }};">{{ section.settings.title_2 }}</h6>
+            {% endif %}
+            {% if section.settings.text_2 != blank %}
+            <h3 style="color:{{ section.settings.text_2_clr }};">{{ section.settings.text_2}}</h3>    
+            {% endif %}  
+            {% if section.settings.button_2 != blank %}
+            <div class="grid-right-btn">
+            <a class="btn two" href="{{ section.settings.link_2 }}" style="">{{ section.settings.button_2}}</a>    
+            </div>
+            {% endif %}   
+          </div>  
+        </div>
+      </div>
+    </div>
+    {% if section.blocks.size > 0 %}     
+    <div class="grid__item  {{ row1 }} center-section">
+      <div id="home-slider-wrapper">
+        <ul class="loop owl-carousel owl-theme">
+          {% for block in section.blocks %}
+
+          <li class="slider_{{forloop.index }}_loop">
+            {% if block.settings.slide_1_link != blank %}<a href="{{ block.settings.slide_1_link }}">{% endif %}
+
+            {% if block.settings.slideshow_1_img != blank %}
+            <img src="{{ block.settings.slideshow_1_img | img_url: "768X" }}" alt="{{ block.settings.slider1_title  }}" title="{{ block.settings.slider1_title  }}"  />                         
+
+            {% else %}
+            <img src="//via.placeholder.com/768x650">
+            {% endif %}
+
+
+
+            <div class="slider-des">
+              {% if block.settings.slider1_title != blank %}<h6 style="color:{{ block.settings.slide_1_heading }}">{{ block.settings.slider1_title  }}</h6>{% endif %}
+              {% if block.settings.slider1_subtitle != blank %}<h3 style="color:{{ block.settings.slide_1_subheading }}">{{ block.settings.slider1_subtitle  }}</h3>{% endif %}
+              {% if block.settings.slider1_content != blank %}<p style="color:{{ block.settings.slide_1_desc }}"> {{ block.settings.slider1_content }} </p>{% endif %}
+              {% if block.settings.slide_1_btn_txt != blank %}<a class="btn" href="{{ block.settings.slide_1_link }}"> {{ block.settings.slide_1_btn_txt }} </a>{% endif %}
+            </div>
+            {% if block.settings.slide_1_link != blank %}</a>{% endif %}                
+          </li>
+
+          {% endfor %}
+        </ul>	
+        <div class="divas-navigation"></div>
+      </div>	
+    </div>      
+    {% endif %}
+    <div class="grid__item {{ row }}">
+
+      <div class="middle-top grid__item">  
+        <div class="ovrly31 overlay_4">
+          {% if section.settings.link_3 != blank %}<a class="banner_half_img" href="{{ section.settings.link_3 }}">{% endif%}
+          {% if section.settings.image_3 != blank %}
+          <img src="{{ section.settings.image_3 | img_url: 'master' }}" alt="{{ section.settings.title_3 }}" />
+          <div class="ovrly"></div>
+          {% else %}
+
+          <img src="//via.placeholder.com/570x400">
+          {% endif%}           
+          {% if section.settings.link_3 != blank %}  </a>
+
+          {% endif%}
+          <div class="featured-content">        
+            {% if section.settings.title_3 != blank %}
+            <h6 style="color:{{ section.settings.title_3_clr }};">{{ section.settings.title_3 }}</h6>
+            {% endif %}
+            {% if section.settings.text_3 != blank %}
+            <h3 style="color:{{ section.settings.text_3_clr }};">{{ section.settings.text_3}}</h3>    
+            {% endif %}  
+            {% if section.settings.button_3 != blank %}
+            <div class="grid-right-btn">
+            <a class="btn three" href="{{ section.settings.link_3 }}" style="">{{ section.settings.button_3}}</a>    
+            </div>
+            {% endif %}         
+          </div>      
+        </div>
+      </div>   
+      <div class="middle-bottom grid__item">
+        <div class="ovrly31 overlay_5">
+          {% if section.settings.link_4 != blank %}<a class="banner_half_img" href="{{ section.settings.link_4 }}">{% endif%}
+          {% if section.settings.image_4 != blank %}
+          <img src="{{ section.settings.image_4 | img_url: 'master' }}" alt="{{ section.settings.title_4 }}" />
+          <div class="ovrly"></div>
+          {% else %}
+
+          <img src="//via.placeholder.com/570x400">
+          {% endif%}           
+          {% if section.settings.link_4 != blank %}  </a>
+
+          {% endif%}
+          <div class="featured-content">       
+            {% if section.settings.title_4 != blank %}
+            <h6 style="color:{{ section.settings.title_4_clr }};">{{ section.settings.title_4 }}</h6>
+            {% endif %}
+            {% if section.settings.text_4 != blank %}
+            <h3 style="color:{{ section.settings.text_4_clr }};">{{ section.settings.text_4 }}</h3>    
+            {% endif %}  
+            {% if section.settings.button_4 != blank %}
+            <div class="grid-right-btn">
+            <a class="btn four" href="{{ section.settings.link_4 }}" style="">{{ section.settings.button_4}}</a>    
+            </div>
+            {% endif %}            
+          </div>      
+        </div>
+      </div>
+    </div>
+
+
+    <style>
+      
+      
+      .grid-banner-type-20 .featured-content .btn ,.grid-banner-type-20 #home-slider-wrapper .slider-des .btn{border:1px solid {{section.settings.button_1_bg}};color:{{section.settings.button_1_txt}};}
+      .grid-banner-type-20 .featured-content .btn:hover ,.grid-banner-type-20 #home-slider-wrapper .slider-des .btn:hover{border:1px solid {{section.settings.hover_button_1_bg}};background:{{section.settings.hover_button_1_bg}};color:{{section.settings.hover_button_1_txt}};}
+      
+  
+      
+      {% if section.settings.overlay_1_use %} .grid-banner-type-20 .ovrly31.overlay_2 .featured-content {background:{{ section.settings.overlay_1 | color_modify: 'alpha', 0.8 }};} {% endif %}
+      
+     {% if section.settings.overlay_2_use %} .grid-banner-type-20 .ovrly31.overlay_3 .featured-content {background:{{ section.settings.overlay_2 | color_modify: 'alpha', 0.8 }};} {% endif %}
+      
+     {% if section.settings.overlay_3_use %} .grid-banner-type-20 .ovrly31.overlay_4 .featured-content {background:{{ section.settings.overlay_3 | color_modify: 'alpha', 0.8 }};} {% endif %}
+      
+     {% if section.settings.overlay_4_use %} .grid-banner-type-20 .ovrly31.overlay_5 .featured-content {background:{{ section.settings.overlay_4 | color_modify: 'alpha', 0.8 }};} {% endif %}
+      
+
+      
+         {% if section.settings.overlay_1_use %} .grid-banner-type-20 .ovrly31.overlay_2:hover .featured-content {background:{{ section.settings.overlay_1 | color_modify: 'alpha', 1 }};} {% endif %}
+      
+     {% if section.settings.overlay_2_use %} .grid-banner-type-20 .ovrly31.overlay_3:hover .featured-content {background:{{ section.settings.overlay_2 | color_modify: 'alpha', 1 }};} {% endif %}
+      
+     {% if section.settings.overlay_3_use %} .grid-banner-type-20 .ovrly31.overlay_4:hover .featured-content {background:{{ section.settings.overlay_3 | color_modify: 'alpha', 1 }};} {% endif %}
+      
+     {% if section.settings.overlay_4_use %} .grid-banner-type-20 .ovrly31.overlay_5:hover .featured-content {background:{{ section.settings.overlay_4 | color_modify: 'alpha', 1 }};} {% endif %}
+      
+
+      
+      
+      
+      
+      #home-slider-wrapper:hover .divas-navigation a.next,#home-slider-wrapper:hover .divas-navigation a.prev {opacity:1; }
+      {% for block in section.blocks %}
+      #home-slider-wrapper ul li.slider_{{forloop.index }}_loop .slider-des { background:{{ block.settings.slide_desc_bg_clr | color_modify: 'alpha', 0.8 }}; } 
+      #home-slider-wrapper ul li.slider_{{forloop.index }}_loop:hover .slider-des { background:{{ block.settings.slide_desc_bg_clr | color_modify: 'alpha', 1 }}; }
+      #home-slider-wrapper ul li.slider_{{forloop.index }}_loop .slider-des a.btn:hover { color:{{ block.settings.slide_1_btn_hover_txt }}; }
+      {% endfor %}
+    </style>
+  </div> 
+  </div>
+</div>
+<div class="dt-sc-hr-invisible-large"></div>
+
+<script>
+  jQuery(document).ready(function($) {
+    $('.loop').owlCarousel({
+      center: true,
+      items:1,
+      loop:true,      
+      dots: false,
+      navContainer: ".divas-navigation",
+      navText: ['<a class="prev btn"><i class="fa fa-angle-left" ></i></a>','<a class="next btn"><i class="fa fa-angle-right" ></i></a>'],
+      autoplay: true,
+      autoplayTimeout: 2800,
+      responsive:{
+        0:{
+          items: 1
+        },
+        600:{
+          items:1
+        },
+        1000:{
+          items: 1
+        }
+      }
+
+
+    });
+  });
+
+</script>
+
+{% schema %}
+{
+"name": "Grid Banner With Slider",
+"class": "index-section",
+"settings": [
+{
+"type": "image_picker",
+"id": "image_1",
+"label": "Image",
+"info": "Size: 768x540"
+},
+{
+"type": "image_picker",
+"id": "title_img",
+"label": "Title Image",
+"info": "Size: 167x43"
+},
+{
+"type": "text",
+"id": "title",
+"label": "Heading"
+},
+{
+"type": "color",
+"id": "maintitle_color",
+"label": "Main Title Color",
+"default":"#000"
+},
+{
+"type": "textarea",
+"id": "description_1",
+"label": "Description"
+
+},
+{
+"type": "color",
+"id": "desc_color",
+"label": "Color",
+"default":"#000"
+},
+{
+"type": "text",
+"id": "title_1",
+"label": "Heading"
+},
+{
+"type": "color",
+"id": "title_1_clr",
+"label": "Heading color",
+"default": "#000"
+},
+{
+"type": "textarea",
+"id": "text_1",
+"label": "Description"
+},
+{
+"type": "color",
+"id": "text_1_clr",
+"label": "Description color",
+"default": "#000"
+},
+{
+"type": "text",
+"id": "button_1",
+"label": "Button text"
+},
+{
+"type": "color",
+"id": "button_1_bg",
+"label": "Button Border color",
+"default": "#000"
+},
+{
+"type": "color",
+"id": "button_1_txt",
+"label": "Button text color",
+"default": "#fff"
+},
+{
+"type": "color",
+"id": "hover_button_1_bg",
+"label": "Button hover Bg clr",
+"default": "#000"
+},
+{
+"type": "color",
+"id": "hover_button_1_txt",
+"label": "Button hover text",
+"default": "#fff"
+},
+{
+"type": "checkbox",
+"id": "overlay_1_use",
+"label": "Use Overlay ?"
+
+},
+{
+"type": "color",
+"id": "overlay_1",
+"label": "Overlay",
+"default": "#fff"
+},
+{
+"type": "url",
+"id": "link_1",
+"label": "Link URL"
+},
+{
+"type": "image_picker",
+"id": "image_2",
+"label": "Image",
+"info": "Size: 768x540"
+},
+
+{
+"type": "text",
+"id": "title_2",
+"label": "Heading"
+},
+{
+"type": "color",
+"id": "title_2_clr",
+"label": "Heading color",
+"default": "#000"
+},
+{
+"type": "textarea",
+"id": "text_2",
+"label": "Description"
+},
+{
+"type": "color",
+"id": "text_2_clr",
+"label": "Description color",
+"default": "#000"
+},
+{
+"type": "text",
+"id": "button_2",
+"label": "Button text"
+},
+{
+"type": "color",
+"id": "button_2_bg",
+"label": "Button Border color",
+"default": "#000"
+},
+{
+"type": "color",
+"id": "button_2_txt",
+"label": "Button text color",
+"default": "#fff"
+},
+{
+"type": "color",
+"id": "hover_button_2_bg",
+"label": "Button hover Border",
+"default": "#000"
+},
+{
+"type": "color",
+"id": "hover_button_2_txt",
+"label": "Button hover text",
+"default": "#fff"
+},
+{
+"type": "checkbox",
+"id": "overlay_2_use",
+"label": "Use Overlay ?"
+
+},
+{
+"type": "color",
+"id": "overlay_2",
+"label": "Overlay",
+"default": "#fff"
+},
+{
+"type": "url",
+"id": "link_2",
+"label": "Link URL"
+},
+{
+"type": "image_picker",
+"id": "image_3",
+"label": "Image",
+"info": "Size: 768x540"
+},
+{
+"type": "text",
+"id": "title_3",
+"label": "Heading"
+},
+{
+"type": "color",
+"id": "title_3_clr",
+"label": "Heading color",
+"default": "#000"
+},
+{
+"type": "textarea",
+"id": "text_3",
+"label": "Description"
+},
+{
+"type": "color",
+"id": "text_3_clr",
+"label": "Description color",
+"default": "#000"
+},
+{
+"type": "text",
+"id": "button_3",
+"label": "Button text"
+},
+{
+"type": "color",
+"id": "button_3_bg",
+"label": "Button Border color",
+"default": "#000"
+},
+{
+"type": "color",
+"id": "button_3_txt",
+"label": "Button text color",
+"default": "#fff"
+},
+{
+"type": "color",
+"id": "hover_button_3_bg",
+"label": "Button hover Border",
+"default": "#000"
+},
+{
+"type": "color",
+"id": "hover_button_3_txt",
+"label": "Button hover text",
+"default": "#fff"
+},
+{
+"type": "checkbox",
+"id": "overlay_3_use",
+"label": "Use Overlay ?"
+
+},
+{
+"type": "color",
+"id": "overlay_3",
+"label": "Overlay",
+"default": "#fff"
+},
+{
+"type": "url",
+"id": "link_3",
+"label": "Link URL"
+},
+{
+"type": "image_picker",
+"id": "image_4",
+"label": "Image",
+"info": "Size: 768x540"
+},
+{
+"type": "text",
+"id": "title_4",
+"label": "Heading"
+},
+{
+"type": "color",
+"id": "title_4_clr",
+"label": "Heading color",
+"default": "#000"
+},
+{
+"type": "textarea",
+"id": "text_4",
+"label": "Description"
+},
+{
+"type": "color",
+"id": "text_4_clr",
+"label": "Description color",
+"default": "#000"
+},
+{
+"type": "text",
+"id": "button_4",
+"label": "Button text"
+},
+{
+"type": "color",
+"id": "button_4_bg",
+"label": "Button Border color",
+"default": "#000"
+},
+{
+"type": "color",
+"id": "button_4_txt",
+"label": "Button text color",
+"default": "#fff"
+},
+{
+"type": "color",
+"id": "hover_button_4_bg",
+"label": "Button hover Border",
+"default": "#000"
+},
+{
+"type": "color",
+"id": "hover_button_4_txt",
+"label": "Button hover text",
+"default": "#fff"
+},
+{
+"type": "checkbox",
+"id": "overlay_4_use",
+"label": "Use Overlay ?"
+
+},
+{
+"type": "color",
+"id": "overlay_4",
+"label": "Overlay",
+"default": "#fff"
+},
+{
+"type": "url",
+"id": "link_4",
+"label": "Link URL"
+}
+],
+
+"blocks": [
+{
+"type": "image",
+"name": "Slider Images",
+"settings": [ 		
+{
+"type": "image_picker",
+"id": "slideshow_1_img",
+"label": "Image",
+"info": "Size: 768x650"
+},
+{
+"type": "text",
+"id": "slider1_title",
+"label": "Slider title"
+},
+{
+"type": "color",
+"id": "slide_1_heading",
+"label": "Slider title",
+"default": "#000000"
+},
+{
+"type": "text",
+"id": "slider1_subtitle",
+"label": "Slider sub title"
+},
+{
+"type": "color",
+"id": "slide_1_subheading",
+"label": "Slider sub title",
+"default": "#ffffff"
+},
+{
+"type": "textarea",
+"id": "slider1_content",
+"label": "Slider Content"
+},
+{
+"type": "color",
+"id": "slide_1_desc",
+"label": "Slider Content",
+"default": "#ffffff"
+},
+{
+"type": "text",
+"id": "slide_1_link",
+"label": "Links to",
+"default": "/collections/all"
+},
+{
+"type": "text",
+"id": "slide_1_btn_txt",
+"label": "Slider Btn Text"
+},
+{
+"type": "color",
+"id": "slide_1_btn",
+"label": "Slider Btn Color",
+"default": "#000"
+},
+
+{
+"type": "color",
+"id": "slide_1_btn_hover_txt",
+"label": "Slider Btn Hover Text",
+"default": "#000"
+},
+{
+"type": "color",
+"id": "slide_desc_bg_clr",
+"label": "Slider Desc Bg COlor",
+"default": "#000"
+}
+
+
+
+]
+}
+],
+
+"presets": [
+{
+"name": "Grid Banner With Slider",
+"category": "Image",
+"blocks": []
+}
+]
+}
+{% endschema %}
+
+
+

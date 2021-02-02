@@ -1,0 +1,215 @@
+
+<div data-section-id="{{ section.id }}"  data-section-type="box-team-type" class="box-team-type">
+  <div class="container">
+    {% if section.settings.title != blank  %}
+    <div class="section-header section-header--small">
+      <div class="border-title">
+        {% if section.settings.title != blank %} <h2 style="color:{{ section.settings.title_clr }};">{{ section.settings.title }}</h2>{% endif %}   
+      </div>
+    </div>
+    <div class="dt-sc-hr-invisible-small"></div>
+    {% endif %} 
+    <div class="grid__item">
+      {% if section.blocks.size > 0 %}  
+      {% for block in section.blocks %}   
+      {% case section.blocks.size %}
+      {% when 1 %}
+      {%- assign block_width = 'one-whole text-center' -%}
+      {% when 2 %}
+      {%- assign block_width = 'wide--one-half post-large--one-half large--one-third medium--one-whole small-grid__item' -%}
+      {% when 3 %}
+      {%- assign block_width = 'wide--one-third post-large--one-third large--one-third medium--one-whole small-grid__item' -%}
+      {% when 4 %}
+      {%- assign block_width = 'wide--one-quarter post-large--one-quarter large--one-half medium--one-whole small-grid__item' -%}
+      {% endcase %}
+      <div class="grid__item {{ block_width }}">
+        <div class="team-wrapper" >
+          <div class="team-inner-wrapper" style="border:1px solid {{block.settings.team_border_clr}}" >
+            <div class="team-detail">
+              {% if block.settings.team_title != blank %}
+              <h5 style="color:{{block.settings.team_title_clr}};">{{block.settings.team_title }}</h5>
+              {% endif %}
+             
+              <div class="team-img">
+                 {% if block.settings.team_6_image != blank %}
+                <img src="{{ block.settings.team_6_image | img_url: '1024x1024' }}" alt="" title=""  style="border:5px solid {{block.settings.team_img_border}}"/> 
+                {% else %}
+                <img src="//via.placeholder.com/420x420">
+                {% endif %}
+              </div>
+              
+              {% if block.settings.team_desc != blank %}
+              <p style="color:{{block.settings.team_desc_clr}};">{{block.settings.team_desc }}</p>
+              {% endif %}
+            </div>
+            {% if block.settings.btn_text != blank %}
+            <a href="{{block.settings.btn_link }} "  style="background:{{block.settings.btn_bg_clr}};color:{{block.settings.btn_txt_clr}};">{{block.settings.btn_text }}</a>
+            {% endif %}
+          </div>
+        </div>
+      </div>        
+      {% endfor %}
+      {% endif %}
+    </div>
+  </div>
+  <div class="dt-sc-hr-invisible-large"></div>
+</div>
+
+
+
+<style>
+
+  .box-team-type .team-inner-wrapper .team-detail::after{background:{{section.settings.team_desc_clr}};}
+
+  .box-team-type .team-inner-wrapper .team-detail::before{background:{{section.settings.team_desc_clr}};}
+
+  .box-team-type .team-wrapper:hover h5{color:{{section.settings.team_hover_title_clr}}!important;}
+
+  .box-team-type .team-wrapper:hover p{color:{{section.settings.team_hover_desc_clr}}!important;}
+
+  .box-team-type .team-wrapper:hover a{background:{{section.settings.btn_hoverbg_clr}} !important;color:{{section.settings.btn_hovertxt_clr}}!important;}
+
+  .box-team-type .team-wrapper:hover .team-inner-wrapper{border:1px solid {{section.settings.settings.btn_hoverbg_clr}} !important;}
+
+</style>
+
+
+
+{% schema %}
+{
+"name": "Box Team Type",
+"class": "index-section",
+"settings": [
+{
+"type": "text",
+"id": "title",
+"label": "Heading"
+},
+{
+"type": "color",
+"id": "title_clr",
+"label": "Heading",
+"default": "#000"
+},
+
+{
+"type": "color",
+"id": "team_desc_clr",
+"label": "Team Desc Color",
+"default": "#000"   
+},
+
+{
+"type": "color",
+"id": "team_hover_title_clr",
+"label": "Team Hover Title Color",
+"default": "#000"   
+},
+{
+"type": "color",
+"id": "team_hover_desc_clr",
+"label": "Team Hover Desc Color",
+"default": "#000"   
+},
+{
+"type": "color",
+"id": "btn_hoverbg_clr",
+"label": "Button Hover Bg Color",
+"default": "#000"   
+},
+{
+"type": "color",
+"id": "btn_hovertxt_clr",
+"label": "Button Hover Text Color",
+"default": "#000"   
+}
+],
+"blocks": [
+{
+"type": "Image",
+"name":"Box Team Type",
+"settings": [
+{
+"type": "color",
+"id": "team_border_clr",
+"label": "Team Border Color",
+"default": "#000"   
+},
+{
+"type": "image_picker",
+"id": "team_6_image",
+"label": "Image",
+"info": "Size: 279x336"
+},
+{
+"type": "color",
+"id": "team_img_border",
+"label": "Team Img Border",
+"default": "#000"   
+},
+{
+"type": "text",
+"id": "team_title",
+"label": "Heading",
+"default": "Heading"
+},
+{
+"type": "color",
+"id": "team_title_clr",
+"label": "Team Title Color",
+"default": "#000"   
+},
+{
+"type": "text",
+"id": "team_desc",
+"label": "Team Desc",
+"default": "Heading"
+},
+{
+"type": "color",
+"id": "team_desc_clr",
+"label": "Team Desc Color",
+"default": "#000"   
+},
+{
+"type": "text",
+"id": "btn_text",
+"label": "Button Text",
+"default": "Read More"
+},
+{
+"type": "url",
+"id":"btn_link",
+"label": "Button Link"
+},
+{
+"type": "color",
+"id": "btn_bg_clr",
+"label": "Button Bg Color",
+"default": "#000"   
+},
+{
+"type": "color",
+"id": "btn_txt_clr",
+"label": "Button Text Color",
+"default": "#000"   
+}
+]
+}
+],
+"presets": [
+{
+"name": "Box Team Type",
+"category": "Image",
+"blocks": [
+{
+"type": "Image"
+},
+{
+"type": "Image"
+}        
+]
+}
+]
+}
+{% endschema %}

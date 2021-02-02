@@ -1,0 +1,269 @@
+
+<div data-section-id="{{ section.id }}"  data-section-type="overlay-team-type" class="overlay-team-type">
+  
+  <div class="container">
+  {% if section.settings.title != blank  %}
+  <div class="section-header section-header--small">
+    <div class="border-title">
+      {% if section.settings.title != blank %} <h2 style="color:{{ section.settings.title_clr }};">{{ section.settings.title }}</h2>{% endif %}   
+       {% if section.settings.title_img != blank %}
+        <div class="tilte_img">
+          <img src="{{ section.settings.title_img | img_url: '167x' }}" alt="" title=""  />
+        </div>
+        {% endif %}
+    </div>
+  </div>
+ 
+  {% endif %} 
+  <div class="grid__item">
+    {% if section.blocks.size > 0 %}  
+    {% for block in section.blocks %}   
+    {% case section.blocks.size %}
+    {% when 1 %}
+    {%- assign block_width = 'one-whole text-center' -%}
+    {% when 2 %}
+    {%- assign block_width = 'wide--one-half post-large--one-half large--one-half medium--one-half small-grid__item' -%}
+    {% when 3 %}
+    {%- assign block_width = 'wide--one-third post-large--one-third large--one-half medium--one-half small-grid__item' -%}
+    {% when 4 %}
+    {%- assign block_width = 'wide--one-quarter post-large--one-quarter large--one-half medium--one-half small-grid__item' -%}
+    {% when 5 %}
+    {%- assign block_width = 'wide--one-fifth post-large--one-fifth large--one-half medium--one-half small-grid__item' -%}
+    {% endcase %}
+    <div class="grid__item {{ block_width }}">
+      <div class="team-wrapper">
+        <div class="team-inner-wrapper" style="border:2px solid {{block.settings.team_border_clr}}">
+
+          <div class="team-img">
+            {% if block.settings.team_6_image != blank %}
+            <img src="{{ block.settings.team_6_image | img_url: '1024x1024' }}" alt="" title=""  style=""/> 
+            {% else %}
+            <img src="//via.placeholder.com/420x420">
+            {% endif %}
+          </div>
+
+          <div class="team-detail">
+            {% if block.settings.team_title != blank %}
+            <h5 style="color:{{block.settings.team_title_clr}};">{{block.settings.team_title }}</h5>
+            {% endif %}
+            {% if block.settings.team_subtitle != blank %}
+            <h6 style="color:{{block.settings.team_subtitle_clr}};">{{block.settings.team_subtitle }}</h6>
+            {% endif %}
+
+            {% if block.settings.team_desc != blank %}
+            <p style="color:{{block.settings.team_desc_clr}};">{{block.settings.team_desc }}</p>
+            {% endif %}
+            <ul class="social-icon">
+              {% if block.settings.social_1_icon != blank %}
+              <li><a href="{{block.settings.social_1_icon_link }}"><i class="{{block.settings.social_1_icon }}" aria-hidden="true"></i></a></li>
+              {% endif %}
+              {% if block.settings.social_2_icon != blank %}
+              <li><a href="{{block.settings.social_2_icon_link }}"><i class="{{block.settings.social_2_icon }}" aria-hidden="true"></i></a></li>
+              {% endif %}
+              {% if block.settings.social_3_icon != blank %}
+              <li><a href="{{block.settings.social_3_icon_link }}"><i class="{{block.settings.social_3_icon }}" aria-hidden="true"></i></a></li>
+              {% endif %}
+              {% if block.settings.social_4_icon != blank %}
+              <li><a href="{{block.settings.social_4_icon_link }}"><i class="{{block.settings.social_4_icon }}" aria-hidden="true"></i></a></li>
+              {% endif %}
+            </ul> 
+          </div>
+        </div>
+      </div>
+    </div>        
+    {% endfor %}
+    {% endif %}
+  </div>
+  <div class="dt-sc-hr-invisible-large"></div>
+  </div>
+</div>
+
+
+
+<style>
+
+  .overlay-team-type .social-icon a{border:1px dashed {{section.settings.social_icon_border}};color:{{section.settings.social_icon_clr}};}
+
+  .overlay-team-type .social-icon a:hover{color:{{section.settings.social_icon_hoverclr}};background:{{section.settings.social_icon_hoverbg}};border:1px dashed {{section.settings.Hover_overlay_clr}};}
+
+  .overlay-team-type .team-inner-wrapper::before { background: {{section.settings.Hover_overlay_clr}};}
+  
+</style>
+
+
+
+
+
+{% schema %}
+{
+"name": "Overlay Team Type",
+"class": "index-section",
+"settings": [
+{
+"type": "image_picker",
+"id": "title_img",
+"label": "Title Image",
+"info": "Size: 55x17"
+}, 
+{
+"type": "text",
+"id": "title",
+"label": "Heading"
+},
+{
+"type": "color",
+"id": "title_clr",
+"label": "Heading",
+"default": "#000"
+},
+{
+"type": "color",
+"id": "social_icon_border",
+"label": "Social Icon Border COlor",
+"default": "#000"   
+},
+{
+"type": "color",
+"id": "social_icon_clr",
+"label": "Social Icon Color",
+"default": "#000"   
+},
+{
+"type": "color",
+"id": "social_icon_hoverbg",
+"label": "Social Icon Hover Bg",
+"default": "#000"   
+},
+{
+"type": "color",
+"id": "social_icon_hoverclr",
+"label": "Social Icon Hover clr",
+"default": "#000"   
+},
+{
+"type": "color",
+"id": "Hover_overlay_clr",
+"label": "Team Overlay Color",
+"default": "#000"   
+}
+],
+"blocks": [
+{
+"type": "Image",
+"name":"Overlay Team Type",
+"settings": [
+{
+"type": "color",
+"id": "team_border_clr",
+"label": "Team Border Color",
+"default": "#000"   
+},
+{
+"type": "image_picker",
+"id": "team_6_image",
+"label": "Image",
+"info": "Size: 279x336"
+},
+{
+"type": "text",
+"id": "team_title",
+"label": "Heading",
+"default": "Heading"
+},
+{
+"type": "color",
+"id": "team_title_clr",
+"label": "Team Title Color",
+"default": "#000"   
+},
+{
+"type": "text",
+"id": "team_subtitle",
+"label": "Sub Heading",
+"default": "Heading"
+},
+{
+"type": "color",
+"id": "team_subtitle_clr",
+"label": "Team Sub Title Color",
+"default": "#000"   
+},
+{
+"type": "text",
+"id": "team_desc",
+"label": "Team Desc",
+"default": "Heading"
+},
+{
+"type": "color",
+"id": "team_desc_clr",
+"label": "Team Desc Color",
+"default": "#000"   
+},
+{
+"type": "text",
+"id": "social_1_icon",
+"label": "Social Icon",
+"default": "class name"
+},
+{
+"type": "text",
+"id": "social_1_icon_link",
+"label": "Social Icon Link",
+"default": "facebook"
+},
+{
+"type": "text",
+"id": "social_2_icon",
+"label": "Social Icon",
+"default": "class name"
+},
+{
+"type": "text",
+"id": "social_2_icon_link",
+"label": "Social Icon Link",
+"default": "Twitter"
+},
+{
+"type": "text",
+"id": "social_3_icon",
+"label": "Social Icon",
+"default": "class name"
+},
+{
+"type": "text",
+"id": "social_3_icon_link",
+"label": "Social Icon Link",
+"default": "Google Plus"
+},
+{
+"type": "text",
+"id": "social_4_icon",
+"label": "Social Icon",
+"default": "class name"
+},
+{
+"type": "text",
+"id": "social_4_icon_link",
+"label": "Social Icon Link",
+"default": "Instagram"
+}
+]
+}
+],
+"presets": [
+{
+"name": "Overlay Team Type",
+"category": "Image",
+"blocks": [
+{
+"type": "Image"
+},
+{
+"type": "Image"
+}        
+]
+}
+]
+}
+{% endschema %}

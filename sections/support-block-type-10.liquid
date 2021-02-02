@@ -1,0 +1,186 @@
+<div data-section-id="{{ section.id }}"  data-section-type="support-block-type-10" class="support-block-type-10">  
+   
+      <div class="grid-uniform">
+        <div class="container">
+           <div class="grid">
+       <ul class="support_block" >
+         
+        {% if section.blocks.size > 0 %}      
+        {% for block in section.blocks %}
+        {% case section.blocks.size %}
+        {% when 1 %}
+         {%- assign block_width = 'one-whole text-center' -%}
+        {% when 2 %}
+         {%- assign block_width = 'wide--one-half post-large--one-half large--one-half medium--one-half small-grid__item' -%}
+        {% when 3 %}
+         {%- assign block_width = 'wide--one-third post-large--one-third large--one-third medium--one-half small-grid__item' -%}
+         {% when 4 %}
+         {%- assign block_width = 'wide--one-quarter post-large--one-quarter large--one-half medium--one-half small-grid__item' -%}
+        {% endcase %}
+        <li class="grid__item {{ block_width }} wow fadeInUp"  data-wow-delay="{{ settings.time_lazy_load }}ms">
+          
+          <div class="support_section">  
+            
+            <div class="support-wrapper" style="border:2px solid  {{block.settings.icon_bg_color}}">
+            
+                   {% if block.settings.class != blank  %}  
+                  <div class="support_icon" style="">                      
+                    <a href="{{ block.settings.link }}"  class="icon" style="color:{{ block.settings.class_color }};border:1px solid {{block.settings.icon_border_color}}"><i class="{{ block.settings.class }}"></i></a>
+                 </div>
+                  {% endif %}   
+                     <div class="support_text"> 
+                   {% if block.settings.title != blank  %}  
+                  <h3 style="color:{{ block.settings.title_color }};">{{ block.settings.title }}</h3>
+                  {% endif %} 
+                  {% if block.settings.desc != blank  %}  
+                  <p style="color:{{ block.settings.desc_color }};" class="desc">{{ block.settings.desc }}</p>
+                  {% endif %}                       
+      			  </div>   
+            </div>
+             
+          </div>    
+      </li>  
+         {% endfor %}
+        {% endif %}
+    </ul>
+        </div>
+          </div> 
+      </div>
+    <div class="dt-sc-hr-invisible-large"></div>
+   
+
+</div>
+  
+  
+ 
+<style>
+
+
+  .support-block-type-10 .support_section .support-wrapper:hover a {border:1px solid {{section.settings.iconhoverborder_color}}!important;}
+  .support-block-type-10 .support_section .support-wrapper:hover { background: {{ section.settings.iconhover_color }}!important;border:2px solid {{ section.settings.iconhover_color }}!important; }
+  .support-block-type-10 .support_section .support-wrapper:hover .support_icon a , .support-block-type-10 .support_section .support-wrapper:hover h3 , .support-block-type-10 .support_section .support-wrapper:hover p{color:{{ section.settings.iconhovertext_color  }} !important; }
+
+</style>
+  
+  
+  
+{% schema %}
+{
+ "name": "Support Block",
+  "class": "index-section",
+  "max_blocks":4,
+  "settings": [
+{
+"type": "header",
+"content": "General Color"
+},
+
+{
+          "type": "color",
+          "id": "iconhover_color",
+          "label": "Icon Hover Bg",
+		  "default":"#000"
+        },
+
+{
+          "type": "color",
+          "id": "iconhovertext_color",
+          "label": "Icon Hover Text Color",
+		  "default":"#000"
+        },
+{
+          "type": "color",
+          "id": "iconhoverborder_color",
+          "label": "Icon Hover Border Color",
+		  "default":"#000"
+        }
+
+],
+  "blocks": [
+    {
+      "type": "text",
+      "name": "Support Block",
+      "settings": [ 
+{
+          "type": "color",
+          "id": "icon_bg_color",
+          "label": "Icon Section Bg",
+		  "default":"#000"
+        },
+ 		 {
+          "type": "text",
+          "id": "class",
+          "label": "Font Awesoem class",
+          "default": "fa fa-plus"   
+        },
+		{
+          "type": "color",
+          "id": "class_color",
+          "label": "Icon color",
+		  "default":"#000"
+        },
+{
+          "type": "color",
+          "id": "icon_border_color",
+          "label": "Icon Border color",
+		  "default":"#000"
+        },
+{
+          "type": "color",
+          "id": "class_bgcolor",
+          "label": "Icon Bg color",
+		  "default":"#000"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading"          
+        },
+		{
+          "type": "color",
+          "id": "title_color",
+          "label": "Color",
+		  "default":"#000"
+        },
+ 		{
+          "type": "text",
+          "id": "desc",
+          "label": "Description"          
+        },
+
+{
+          "type": "color",
+          "id": "desc_color",
+          "label": "Color",
+		  "default":"#000"
+        },
+
+		{
+          "type": "text",
+          "id": "link",
+          "label": "Link"          
+        }      
+		
+      ]
+    }
+  ],
+  "presets": [
+    {
+     "name": "Support Block",
+      "category": "Text",
+      "blocks": [
+        {
+          "type": "text"
+        },
+        {
+          "type": "text"
+        },
+        {
+          "type": "text"
+        }
+ 		
+      ]
+    }
+  ]
+}
+{% endschema %}
