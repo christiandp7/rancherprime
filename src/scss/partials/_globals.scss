@@ -1,3 +1,18 @@
 .text-center {
   text-align: center !important;
 }
+
+// Buttons
+.btn {
+  border-radius: 0 !important;
+  letter-spacing: 0.15em;
+
+  // button variants
+  // &.slide-button {
+  //   border-color: $color-accent-primary !important;
+  //   background-color: $color-accent-primary;
+  //   &:hover {
+  //     background-color: transparent !important;
+  //   }
+  // }
+}
