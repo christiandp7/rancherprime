@@ -1,0 +1,88 @@
+
+{% if section.settings.display_top_adv_bar %}   
+  <div class="top_bar top-bar-type-99 notification_bar header-top"  style="background-color:{{ section.settings.notification_bar_bg }};">    
+    {% if section.settings.notification_text != blank  %}
+      <span class="t_b_99-notify_text" style="color:{{section.settings.notification_text_clr}};">{{ section.settings.notification_text }}</span>
+    {% endif %}
+    <div class="t_b_99-phone_text" style="background-color:{{section.settings.header_phone_bg_color}};">
+      <a href="tel:{{ section.settings.header_phone_value }}">
+        <i class="fa fa-phone"></i> &nbsp; &nbsp; {{ section.settings.header_phone_value }}
+      </a>
+    </div>
+  </div>
+  
+  
+ <style>
+   
+ 
+  .notification_bar li a { color:{{section.settings.notification_linktxt_color }};}    
+  .notification_bar li a:hover { color:{{section.settings.notification_hover_linktxt_color }};}   
+   
+  .notification_bar a.close { color:{{section.settings.stripe_icon }};}    
+  .notification_bar a.close:hover { color:{{section.settings.stripe_icon_hover }};}     
+   
+  </style>
+  
+</div>   
+{% endif %}
+
+{% schema %}
+  {
+    "name": "Notification Bar",
+    "settings": [
+{
+"type":"checkbox",
+"id": "display_top_adv_bar",
+"label": "Top Notification Bar"	
+},
+{
+"type": "color",
+"id": "notification_bar_bg",
+"label": "Background",
+"default": "#000"
+},
+{
+"type": "text",
+"id": "notification_text",
+"label": "Notification text",
+"default": "Long Weekend Sale Up to 50% OFF"
+},  
+{
+"type": "color",
+"id": "notification_text_clr",
+"label": "Notify Text",
+"default": "#fff"
+},
+{
+"type": "text",
+"id": "notification_linktxt",
+"label": "Notification Link Text",
+"default": "Shop Now"
+}, 
+{
+  "type": "text",
+  "id": "header_phone_value",
+  "label": "Phone number",
+  "default": "(00) 000 111 222"
+  },   
+{
+"type": "color",
+"id": "header_phone_bg_color",
+"label": "Phone BG color",
+"default": "#fff"
+}
+
+]
+  }
+{% endschema %}
+{% javascript %}
+
+if (jQuery.cookie('headerTop') == 'closed') {
+jQuery('.header-top').fadeOut();
+}
+
+jQuery('.header-top a.close').bind('click',function(){
+jQuery('.header-top').fadeOut();
+jQuery.cookie('headerTop', 'closed', {expires:-1, path:'/'});
+});  
+{% endjavascript %}

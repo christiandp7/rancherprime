@@ -83,6 +83,9 @@
                   {% if block.settings.paragraph_text != blank %}
                     <div class="custom__block-body-text rte-setting">{{ block.settings.paragraph_text }}</div>
                   {% endif %}
+                  {% if block.settings.button_text != blank %}
+                    <a href="{{ block.settings.button_link }}" class="btn">{{ block.settings.button_text }}</a>
+                  {% endif %}
                 </div>
               {% when 'video' %}
 
@@ -362,6 +365,21 @@
               "label": "Extra large"
             }
           ]
+        },
+        {
+          "type": "header",
+          "content": "Button"
+        },
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button Text",
+          "default": "Button"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Buton Link"
         },
         {
           "type": "header",

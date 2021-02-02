@@ -1,0 +1,25 @@
+.text-center {
+  text-align: center !important;
+}
+
+.top-bar-type-99 {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 !important;
+}
+.top-bar-type-99 .t_b_99-notify_text {
+  margin-left: auto;
+  margin-right: auto;
+}
+.top-bar-type-99 .t_b_99-phone_text {
+  padding: 10px 18px;
+}
+.top-bar-type-99 .t_b_99-phone_text a:hover {
+  color: white !important;
+}
+
+.template-index .header-type-8 .site-header {
+  top: 60px;
+}

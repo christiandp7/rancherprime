@@ -36,6 +36,7 @@
   {{ 'slick-slider.css' | asset_url | stylesheet_tag }}
   {{ 'animate.css' | asset_url | stylesheet_tag }}
   {{ 'font-all.min.css' | asset_url | stylesheet_tag }}
+  {{ 'custom.scss' | asset_url | stylesheet_tag }}
 
   {% if settings.base_font contains 'Google' %}
   <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family={{ settings.base_font | remove: 'Google+' }}:300,300italic,400,600,400italic,600italic,700,700italic,800,800italic">
@@ -304,17 +305,18 @@
   </div>
 
   {% when 'style_8' %}
+  {% section 'top-bar-type-99' %} 
   <div class="wrapper-container">	
     <div class="header-type-8"> 
-{% include 'search-bar-type-3' %}
+    {% include 'search-bar-type-3' %}
       <header class="site-header">
         <div class="header-sticky">
           <div id="header-landing" class="sticky-animate">
             <div class="wrapper">
               <div class="grid--full site-header__menubar"> 
-                {% include 'logo' %}
-                <div class="menubar-section order-header">
 
+                {% comment %}{% include 'logo' %}{% endcomment %}
+                <div class="menubar-section order-header">
                   <div class="desktop-megamenu">     
                     {% section 'navigation' %}         
                   </div>            
