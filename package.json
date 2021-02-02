@@ -1,0 +1,22 @@
+{
+  "name": "rancherprime",
+  "version": "1.0.0",
+  "description": "Ranchers prime theme based on Onky theme",
+  "main": "index.js",
+  "scripts": {
+    "start": "theme open --env=development && theme watch --allow-live",
+    "sass": "sass --no-source-map --watch src/scss/index.scss assets/custom.scss",
+    "deploy": "theme deploy --allow-live"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/christiandp7/rancherprime.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/christiandp7/rancherprime/issues"
+  },
+  "homepage": "https://github.com/christiandp7/rancherprime#readme"
+}
