@@ -608,8 +608,8 @@ input[type=number] { display:block; margin:10px 0 10px; width:100%; outline:none
 .sidebar-tag input[type="checkbox"] + label { border-bottom:1px dashed $colorBorder;padding:12px 0 12px 20px;margin:0; }
 .sidebar-tag li:last-child input[type="checkbox"]+label { border-bottom:none;padding-bottom:0; }
 
-.btn,.dt-sc-button,.shopify-payment-button .shopify-payment-button__button--unbranded { background:none;line-height:1.7;border:1px solid $colorBtnPrimary;color: $colorBtnPrimaryText;border-radius:{{settings.border_radius}}px;
-  &:hover { background-color: $colorBtnPrimaryHover;color: {{ settings.primary_hover_btn_text }}; border-color: $colorBtnPrimaryHover; }}
+.btn,.dt-sc-button,.shopify-payment-button .shopify-payment-button__button--unbranded { background-color: $colorBtnPrimary;line-height:1.7;border:1px solid $colorBtnPrimary;color: $colorBtnPrimaryText;border-radius:{{settings.border_radius}}px;
+  &:hover { background: none;color: $colorBtnPrimaryHover; border-color: $colorBtnPrimaryHover; }}
 .btn,.dt-sc-button,.shopify-payment-button .shopify-payment-button__button--unbranded { display: inline-block;padding:8px 28px;@include at-query ($max, $laplarge) { padding:10px 24px; }@include at-query ($max, $postlarge) { padding:10px 15px;font-size:14px; } @include at-query ($max, $medium) { padding:10px 20px; }  margin: 0;text-decoration: none;text-align: center; vertical-align: middle;white-space: nowrap; cursor: pointer; @include prefix('user-select', 'none'); -webkit-appearance: none; -moz-appearance: none;@include at-query ($max, $small) { font-size:14px;padding:7px 18px; }font-size:{{ settings.type_base_size }};@include transition(all 0.4s ease-in-out);outline:none;}
   
 .shopify-payment-button .shopify-payment-button__button--unbranded { border-radius: {{settings.border_radius}}px;width:auto;line-height:1.7; }
@@ -621,7 +621,7 @@ input[type=number] { display:block; margin:10px 0 10px; width:100%; outline:none
   .btn,.dt-sc-button,.shopify-payment-button .shopify-payment-button__button--unbranded {
      &:hover:not([disabled]),
   &:active,
-  &:focus { background-color: $colorBtnPrimaryHover; color: {{ settings.primary_hover_btn_text }}; border-color: $colorBtnPrimaryHover; }}
+  &:focus { background-color: transparent; color: {{ settings.primary_hover_btn_text }}; border-color: $colorBtnPrimaryHover; }}
 .btn--secondary,
 input.btn--secondary {  @extend .btn;   &:hover {  }
   &:active,
@@ -6904,3 +6904,9 @@ q::before {    content: none;}
 .team-section h6 { margin:0 0 5px; }
 
 
+/* Some Custom*/
+
+body {
+	background-image: url("{{ 'bg-texture.jpg' | asset_url }}");
+	background-repeat: repeat;
+}
