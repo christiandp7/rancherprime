@@ -1,0 +1,252 @@
+
+<div data-section-id="{{ section.id }}"  data-section-type="box-team-type" class="box-icons-type">
+  <div class="container">
+    {% if section.settings.title != blank  %}
+    <div class="section-header section-header--small">
+      {% if section.settings.title != blank %} <h2 class="text-center" style="color:{{ section.settings.title_clr }};">{{ section.settings.title }}</h2>{% endif %}   
+    </div>
+    <div class="dt-sc-hr-invisible-small"></div>
+    {% endif %} 
+    <div class="grid__item">
+      {% if section.blocks.size > 0 %}  
+      {% for block in section.blocks %}   
+      {% case section.blocks.size %}
+      {% when 1 %}
+      {%- assign block_width = 'one-whole text-center' -%}
+      {% when 2 %}
+      {%- assign block_width = 'wide--one-half post-large--one-half large--one-third medium--one-whole small-grid__item' -%}
+      {% when 3 %}
+      {%- assign block_width = 'wide--one-third post-large--one-third large--one-third medium--one-whole small-grid__item' -%}
+      {% when 4 %}
+      {%- assign block_width = 'wide--one-quarter post-large--one-quarter large--one-half medium--one-whole small-grid__item' -%}
+      {% endcase %}
+      <div class="grid__item {{ block_width }}">
+
+        {% comment %}
+        <div class="team-wrapper" >
+          <div class="team-inner-wrapper" style="border:1px solid {{block.settings.team_border_clr}}" >
+            <div class="team-detail">
+              {% if block.settings.team_title != blank %}
+              <h5 style="color:{{block.settings.team_title_clr}};">{{block.settings.team_title }}</h5>
+              {% endif %}
+             
+              <div class="team-img">
+                 {% if block.settings.team_6_image != blank %}
+                <img src="{{ block.settings.team_6_image | img_url: '1024x1024' }}" alt="" title=""  style="border:5px solid {{block.settings.team_img_border}}"/> 
+                {% else %}
+                <img src="//via.placeholder.com/420x420">
+                {% endif %}
+              </div>
+              
+              {% if block.settings.team_desc != blank %}
+              <p style="color:{{block.settings.team_desc_clr}};">{{block.settings.team_desc }}</p>
+              {% endif %}
+            </div>
+            {% if block.settings.btn_text != blank %}
+            <a href="{{block.settings.btn_link }} "  style="background:{{block.settings.btn_bg_clr}};color:{{block.settings.btn_txt_clr}};">{{block.settings.btn_text }}</a>
+            {% endif %}
+          </div>
+        </div>
+        {% endcomment %}
+        <style>
+          .block--{{ block.id }} .icon__wrapper-inner {
+            background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%23{{ block.settings.dashes_color }}' stroke-width='5' stroke-dasharray='15' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+          }
+          .block--{{ block.id }} .icon-text p {
+            color: {{ block.settings.team_desc_clr }};
+          }
+        </style>
+
+        <div class="icon__wrapper block--{{ block.id }}"  style="background-color: {{ block.settings.bg_color }};">
+          <div class="icon__wrapper-inner">
+
+            <div class="icon-img">
+              {% if block.settings.team_6_image != blank %}
+              <img src="{{ block.settings.team_6_image | img_url: '1024x1024' }}" alt="" title="" /> 
+              {% else %}
+              <img src="//via.placeholder.com/420x420">
+              {% endif %}
+            </div>
+
+            {% if block.settings.team_title != blank %}
+              <h2 class="icon-title" style="color:{{block.settings.team_title_clr}};">{{block.settings.team_title }}</h2>
+            {% endif %}
+
+            {% if block.settings.team_desc != blank %}
+              <div class="icon-text">{{block.settings.team_desc }}</div>
+            {% endif %}
+
+          </div>
+        </div>
+
+
+
+      </div>        
+      {% endfor %}
+      {% endif %}
+    </div>
+  </div>
+  <div class="dt-sc-hr-invisible-large"></div>
+</div>
+
+
+
+<style>
+
+
+  .box-icon-type .team-inner-wrapper .team-detail::after{background:{{section.settings.team_desc_clr}};}
+
+  .box-icon-type .team-inner-wrapper .team-detail::before{background:{{section.settings.team_desc_clr}};}
+
+  .box-icon-type .team-wrapper:hover h5{color:{{section.settings.team_hover_title_clr}}!important;}
+
+  .box-icon-type .team-wrapper:hover p{color:{{section.settings.team_hover_desc_clr}}!important;}
+
+  .box-icon-type .team-wrapper:hover a{background:{{section.settings.btn_hoverbg_clr}} !important;color:{{section.settings.btn_hovertxt_clr}}!important;}
+
+  .box-icon-type .team-wrapper:hover .team-inner-wrapper{border:1px solid {{section.settings.settings.btn_hoverbg_clr}} !important;}
+
+</style>
+
+
+
+{% schema %}
+{
+   "name":"Box Icon Type",
+   "class":"index-section",
+   "settings":[
+      {
+         "type":"text",
+         "id":"title",
+         "label":"Heading"
+      },
+      {
+         "type":"color",
+         "id":"title_clr",
+         "label":"Heading",
+         "default":"#000"
+      },
+      {
+         "type":"color",
+         "id":"team_desc_clr",
+         "label":"Icon Desc Color",
+         "default":"#000"
+      },
+      {
+         "type":"color",
+         "id":"team_hover_title_clr",
+         "label":"Icon Hover Title Color",
+         "default":"#000"
+      },
+      {
+         "type":"color",
+         "id":"team_hover_desc_clr",
+         "label":"Icon Hover Desc Color",
+         "default":"#000"
+      },
+      {
+         "type":"color",
+         "id":"btn_hoverbg_clr",
+         "label":"Button Hover Bg Color",
+         "default":"#000"
+      },
+      {
+         "type":"color",
+         "id":"btn_hovertxt_clr",
+         "label":"Button Hover Text Color",
+         "default":"#000"
+      }
+   ],
+   "blocks":[
+      {
+         "type":"Icon",
+         "name":"Box Icon Type",
+         "settings":[
+            {
+              "type":"color",
+              "id":"bg_color",
+              "label":"Background Color",
+              "default":"#000"
+            },
+            {
+               "type":"text",
+               "id":"dashes_color",
+               "label":"Dashes Color",
+               "default":"FFF",
+               "info": "Not use #"
+            },
+            {
+               "type":"image_picker",
+               "id":"team_6_image",
+               "label":"Image",
+               "info":"Size: 279x336"
+            },
+            {
+               "type":"text",
+               "id":"team_title",
+               "label":"Heading",
+               "default":"Heading"
+            },
+            {
+               "type":"color",
+               "id":"team_title_clr",
+               "label":"Icon Title Color",
+               "default":"#000"
+            },
+            {
+               "type":"richtext",
+               "id":"team_desc",
+               "label":"Icon Desc",
+               "default":"<p>Desc text<p/>"
+            },
+            {
+               "type":"color",
+               "id":"team_desc_clr",
+               "label":"Icon Desc Color",
+               "default":"#000"
+            },
+            {
+               "type":"text",
+               "id":"btn_text",
+               "label":"Button Text",
+               "default":"Read More"
+            },
+            {
+               "type":"url",
+               "id":"btn_link",
+               "label":"Button Link"
+            },
+            {
+               "type":"color",
+               "id":"btn_bg_clr",
+               "label":"Button Bg Color",
+               "default":"#000"
+            },
+            {
+               "type":"color",
+               "id":"btn_txt_clr",
+               "label":"Button Text Color",
+               "default":"#000"
+            }
+         ]
+      }
+   ],
+   "presets":[
+      {
+         "name":"Box Icon Type",
+         "category":"Image",
+         "blocks":[
+            {
+               "type":"Icon"
+            },
+            {
+               "type":"Icon"
+            },
+            {
+               "type":"Icon"
+            }
+         ]
+      }
+   ]
+}
+{% endschema %}

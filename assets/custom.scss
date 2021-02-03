@@ -42,3 +42,30 @@
   margin-left: 0;
   max-width: 50%;
 }
+
+.slide-desc-text {
+  font-weight: lighter;
+}
+
+.box-icons-type .icon__wrapper {
+  margin: 0 2em;
+  padding: 0.8em;
+}
+.box-icons-type .icon__wrapper .icon__wrapper-inner {
+  text-align: center;
+  padding: 3em 3em;
+}
+.box-icons-type .icon__wrapper .icon__wrapper-inner .icon-img {
+  width: 70px;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+.box-icons-type .icon__wrapper .icon__wrapper-inner .icon-img img {
+  width: 100%;
+}
+.box-icons-type .icon__wrapper .icon__wrapper-inner .icon-title {
+  margin-top: 35px;
+}
+.box-icons-type .icon__wrapper .icon__wrapper-inner .icon-text {
+  margin-top: 20px;
+}
