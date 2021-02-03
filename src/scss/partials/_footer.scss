@@ -10,4 +10,63 @@
       }
     }
   }
+
+  .site-footer_newsletter {
+    margin: 25px 0;
+    form.contact-form {
+      float: none;
+      width: 100%;
+      text-align: left;
+      input[type="email"] {
+        float: none;
+        max-width: none;
+        width: 60%;
+        border-radius: 0;
+        background-color: transparent;
+        border-bottom: 2px solid $color-primary;
+        color: $color-primary;
+      }
+      .btn {
+        float: none;
+        background-color: $color-primary;
+        color: $color-accent-primary;
+        border: 2px solid $color-primary;
+        font-weight: bold;
+        position: relative;
+        left: -3px;
+        top: -1px;
+        &:hover {
+        }
+      }
+    }
+  }
+
+  .site-footer_contact {
+    margin-top: 45px;
+
+    .site-footer_cotact-data {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      li {
+        margin-bottom: 18px;
+        span {
+          font-weight: bold;
+        }
+      }
+    }
+
+    .site-footer_images {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+    }
+  }
+}
+
+.copyright {
+  &.center {
+    float: none;
+    text-align: center;
+  }
 }

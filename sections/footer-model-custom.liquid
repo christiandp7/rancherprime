@@ -136,8 +136,29 @@
         </div>
         {% endif %}
 
-        <div class="grid__item wide--two-thirds post-large--two-thirds large--two-thirds medium--one-half small--one-whole">
-          holaaa
+        <div class="site-footer_contact grid__item wide--two-thirds post-large--two-thirds large--two-thirds medium--one-half small--one-whole">
+         <h2>{{ section.settings.col2_title }}</h2>
+         <p>{{ section.settings.col2_subtitle }}</p>
+         
+         <div class="site-footer_newsletter">
+            {% include 'newsletter-form' %}
+         </div>
+
+
+         <div class="grid__item site-footer_contact">
+            <div class="grid__item wide--one-half post-large--one-half large--one-half medium--one-whole small-grid__item">
+               <ul class="site-footer_cotact-data">
+                  <li><span>Support email:</span> <a href="mailto:{{ section.settings.col2_email }}">{{ section.settings.col2_email }}</a></li>
+                  <li><span>Address:</span> {{ section.settings.col2_address}}</li>
+                  <li><span>{{ section.settings.col2_additional-text }}</span></li>
+               </ul>
+            </div>
+            <div class="site-footer_images grid__item wide--one-half post-large--one-half large--one-half medium--one-whole small-grid__item">
+               <img src="{{ section.settings.col2_logo_1 | img_url: 'medium' }}" alt="">
+               <img src="{{ section.settings.col2_logo_2 | img_url: 'medium' }}" alt="">
+            </div>
+         </div>
+
         </div>
 
 
@@ -164,7 +185,7 @@
   <div class="grid__item copyright-section" style="border-top: 1px solid {{ section.settings.footer_border }};">
 
     {% if  section.settings.copyright != blank %}
-    <p style="color:{{ section.settings.copyright_clr }}" class="copyright left">{{ section.settings.copyright }} &copy; {{ 'now' | date: "%Y" }}, {{ shop.name }} {% if section.settings.show_powered_by %}  {{ powered_by_link }} {% endif %}</p>
+    <p style="color:{{ section.settings.copyright_clr }}" class="copyright center">{{ section.settings.copyright }} &copy; {{ 'now' | date: "%Y" }}, {{ shop.name }} {% if section.settings.show_powered_by %}  {{ powered_by_link }} {% endif %}</p>
     {% endif %}
     
      {% if section.settings.footer_show_methods_of_payment %}
@@ -285,6 +306,10 @@
         "default":"#000"
      },
      {
+         "type": "header",
+         "content": "Column 1"
+      },
+     {
         "type":"link_list",
         "id":"footer_menu_1",
         "label":"Footer menu 1",
@@ -295,6 +320,50 @@
         "id":"footer_menu_1_title",
         "label":"Heading",
         "default":"footer"
+     },
+     {
+        "type": "header",
+        "content": "Column 2"
+     },
+     {
+        "type": "text",
+        "id": "col2_title",
+        "label": "Heading"
+     },
+     {
+         "type": "text",
+         "id": "col2_subtitle",
+         "label": "Subheading"
+     },
+     {
+         "type": "text",
+         "id": "col2_email",
+         "label": "Email"
+     },
+     {
+         "type": "text",
+         "id": "col2_address",
+         "label": "Address"
+     },
+     {
+         "type": "text",
+         "id": "col2_additional-text",
+         "label": "Aditional Text",
+         "info": "bold text"
+     },
+     {
+        "type": "image_picker",
+        "id": "col2_logo_1",
+        "label": "Logo 1"
+     },
+     {
+         "type": "image_picker",
+         "id": "col2_logo_2",
+         "label": "Logo 2"
+     },
+     {
+        "type": "header",
+        "content": "Payment Icons"
      },
      {
         "type":"image_picker",

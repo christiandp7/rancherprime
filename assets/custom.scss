@@ -99,3 +99,54 @@
 .site-footer .site-footer_social-icons li a span {
   font-size: 22px;
 }
+.site-footer .site-footer_newsletter {
+  margin: 25px 0;
+}
+.site-footer .site-footer_newsletter form.contact-form {
+  float: none;
+  width: 100%;
+  text-align: left;
+}
+.site-footer .site-footer_newsletter form.contact-form input[type=email] {
+  float: none;
+  max-width: none;
+  width: 60%;
+  border-radius: 0;
+  background-color: transparent;
+  border-bottom: 2px solid #fff;
+  color: #fff;
+}
+.site-footer .site-footer_newsletter form.contact-form .btn {
+  float: none;
+  background-color: #fff;
+  color: #b78566;
+  border: 2px solid #fff;
+  font-weight: bold;
+  position: relative;
+  left: -3px;
+  top: -1px;
+}
+.site-footer .site-footer_contact {
+  margin-top: 45px;
+}
+.site-footer .site-footer_contact .site-footer_cotact-data {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.site-footer .site-footer_contact .site-footer_cotact-data li {
+  margin-bottom: 18px;
+}
+.site-footer .site-footer_contact .site-footer_cotact-data li span {
+  font-weight: bold;
+}
+.site-footer .site-footer_contact .site-footer_images {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.copyright.center {
+  float: none;
+  text-align: center;
+}
