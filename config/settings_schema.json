@@ -1945,6 +1945,10 @@
           {
             "value": "style_12",
             "label": "Footer 12"
+          },
+          {
+            "value": "style_13",
+            "label": "Footer Custom"
           }
         ]
       }

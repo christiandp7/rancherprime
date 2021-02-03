@@ -1,12 +1,18 @@
 .container.slider-content__container-right {
   margin-right: 0;
+  padding-right: 3em;
   max-width: 50%;
 }
 .container.slider-content__container-left {
   margin-left: 0;
+  padding-left: 3em;
   max-width: 50%;
 }
 
 .slide-desc-text {
   font-weight: lighter;
+}
+
+.slick-slide img {
+  width: 100%;
 }

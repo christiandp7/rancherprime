@@ -175,352 +175,345 @@
 </div>
 
 {% schema %}
-  {
-  "name": "Footer",
-  "settings": [
-
-  {
-  "type": "color",
-  "id": "footer_bg",
-  "label": "Footer BG"
-  },
-  {
-  "type": "color",
-  "id": "footer_title",
-  "label": "Footer Title",
-  "default":"#000"
-  },
-  {
-  "type": "color",
-  "id": "footer_text",
-  "label": "Footer Text",
-  "default":"#000"
-  },
-  {
-  "type": "color",
-  "id": "footer_link",
-  "label": "Footer Link",
-  "default":"#000"
-  },
-  {
-  "type": "color",
-  "id": "footer_link_hover",
-  "label": "Footer Link Hover"
-  },
-  {
-  "type": "checkbox",
-  "id": "footer_logo_enable",
-  "label": "Show footer logo"
-  },
-  {
-  "type": "image_picker",
-  "id": "footer_logo",
-  "label": "Logo image",
-"info": "Size: 200x59"
-  }, 
-  {
-  "type": "textarea",
-  "id": "welcome_text",
-  "label": "Welcome text"
-  },
-  {
-  "type": "checkbox",
-  "id": "footer_social_enable",
-  "label": "Show social media icons"
-  },
-  {
-  "type": "color",
-  "id": "footer_social_link",
-  "label": " Social Media Icons Link",
-  "default": "#000"
-  },
-  {
-  "type": "color",
-  "id": "footer_social_link_hover",
-  "label": " Social Media Icons Link Hover",
-  "default": "#000"
-  },
-  {
-  "type": "color",
-  "id": "footer_social_link_border",
-  "label": " Social Media Icons Link Border",
-  "default": "#000"
-  },
-  {
-  "type": "color",
-  "id": "footer_social_link_hover_border",
-  "label": " Social Media Icons Link Hover Border",
-  "default": "#000"
-  },
-  {
-  "type": "color",
-  "id": "footer_social_link_hover_bg",
-  "label": " Social Media Icons Link Hover Bg",
-  "default": "#000"
-  },
-  {
-  "type": "checkbox",
-  "id": "footer_about_section",
-  "label": "Footer about section?",
-  "default": true
-  },
- 
-  {
-  "type": "checkbox",
-  "id": "show_footer_best_products",
-  "label": "Use best products?"
-  },
-  {
-  "type": "text",
-  "id": "footer_best_heading",
-  "label": "Heading",
-  "default": "Best sellers"
-  },
-  {
-  "type": "collection",
-  "id": "footer_bestseller_collection",
-  "label": "Collection to use"
-  },
-  {
-  "type": "text",
-  "id": "footer_bestseller_collection_limit",
-  "label": "Product Limit",
-  "default": "4"
-  },
-  {
-  "type": "checkbox",
-  "id": "enable_footer_by_tags",
-  "label": "Enable footer tag and links section",
-  "default": true
-  },
-  {
-  "type": "text",
-  "id": "footer_tags_heading",
-  "label": "Heading",
-  "default": "Tags"
-  },
-  {
-  "type": "textarea",
-  "id": "footer_by_tags_list_tags",
-  "label": "footer by tags list"
-  },
-  {
-  "type": "color",
-  "id": "footer_tag_link",
-  "label": " Tag Link",
-  "default": "#000"
-  },
-  {
-  "type": "color",
-  "id": "footer_tag_link_hover",
-  "label": " Tag Link Hover",
-  "default": "#000"
-  },
-  {
-  "type": "color",
-  "id": "footer_tag_link_border",
-  "label": " Tag Link Border",
-  "default": "#000"
-  },
-  {
-  "type": "color",
-  "id": "footer_tag_link_hover_border",
-  "label": " Tag Link Hover Border",
-  "default": "#000"
-  },
-  {
-  "type": "color",
-  "id": "footer_tag_link_hover_bg",
-  "label": " Tag Link Hover Bg",
-  "default": "#000"
-  },
-  {
-  "type": "checkbox",
-  "id": "use_footer_links",
-  "label": "Show footer menu 4",
-  "default": true
-  },
-  {
-  "type": "text",
-  "id": "footer_menu_4_title",
-  "label": "Heading",
-  "default": "Footer menu 4"
-  },
-  {
-  "type": "link_list",
-  "id": "footer_menu_4",
-  "label": "Footer link"
-  },
-
-  {
-  "type": "checkbox",
-  "id": "footer_contact_enable",
-  "label": "Show contact information"
-  },
-  {
-  "type": "text",
-  "id": "footer_contact_heading",
-  "label": "Contact heading",
-  "default": "We are @"
-  },
-  {
-  "type": "text",
-  "id": "address_heading",
-  "label": "Address Heading"
-  },
-  {
-  "type": "textarea",
-  "id": "footer_address",
-  "label": "Address"
-  },
-  {
-  "type": "text",
-  "id": "email_heading",
-  "label": "Email Heading"
-  },
-  {
-  "type": "text",
-  "id": "footer_email",
-  "label": "Footer email 1"
-  },
-  {
-  "type": "text",
-  "id": "footer_email_2",
-  "label": "Footer email 2"
-  },
-  {
-  "type": "text",
-  "id": "phone_heading",
-  "label": "Phone Heading"
-  },
-  {
-  "type": "text",
-  "id": "footer_phone",
-  "label": "Footer phone 1"
-  },
-  {
-  "type": "text",
-  "id": "footer_phone_2",
-  "label": "Footer phone 2"
-  },
-  {
-  "type": "text",
-  "id": "fax_heading",
-  "label": "Footer fax"
-  },   
-  {
-  "type": "text",
-  "id": "footer_fax_no",
-  "label": "Footer fax"
-  },     
-
-  {
-  "type": "checkbox",
-  "id": "use_footer_bottom",
-  "label": "Use footer bottom?"
-  },
-  {
-  "type": "color",
-  "id": "footer_bottom_bg",
-  "label": "Footer bottom bg",
-  "default":"#000"
-  },
-  {
-  "type": "color",
-  "id": "copyright_text",
-  "label": "Copy Right Text Color",
-  "default": "#000"
-  },
-  {
-  "type": "color",
-  "id": "copyright_link",
-  "label": "Copy Right Link Color",
-  "default": "#000"
-  },
-  {
-  "type": "color",
-  "id": "copyright_link_hover",
-  "label": "Copy Right Link Hover Color",
-  "default": "#000"
-  },
-  {
-  "type": "textarea",
-  "id": "copyright",
-  "label": "Copy Right Text",
-  "default": "Copyright"
-  },
-  {
-  "type": "checkbox",
-  "id": "use_powered_by",
-  "label": "Use Powered By"
-  },
-  {
-  "type": "checkbox",
-  "id": "footer_show_methods_of_payment",
-  "label": "Show methods of paymemt"
-  },
-  {
-  "type": "image_picker",
-  "id": "payment_icon_1",
-  "label": "Image",
-"info": "Size: 55x35"
-  },      
-  {
-  "type": "image_picker",
-  "id": "payment_icon_2",
-  "label": "Image",
-"info": "Size: 55x35"
-  },      
-  {
-  "type": "image_picker",
-  "id": "payment_icon_3",
-  "label": "Image",
-"info": "Size: 55x35"
-  },      
-  {
-  "type": "image_picker",
-  "id": "payment_icon_4",
-  "label": "Image"
-  },      
-  {
-  "type": "image_picker",
-  "id": "payment_icon_5",
-  "label": "Image",
-"info": "Size: 55x35"
-  },      
-  {
-  "type": "image_picker",
-  "id": "payment_icon_6",
-  "label": "Image",
-"info": "Size: 55x35"
-  }, 
 {
-  "type": "image_picker",
-  "id": "payment_icon_7",
-  "label": "Image",
-"info": "Size: 55x35"
-  }, 
-{
-  "type": "image_picker",
-  "id": "payment_icon_8",
-  "label": "Image",
-"info": "Size: 55x35"
-  }, 
-{
-  "type": "image_picker",
-  "id": "payment_icon_9",
-  "label": "Image",
-"info": "Size: 55x35"
-  }, 
-{
-  "type": "image_picker",
-  "id": "payment_icon_10",
-  "label": "Image",
-"info": "Size: 55x35"
-  }
-
-
+  "name":"Footer",
+  "settings":[
+     {
+        "type":"color",
+        "id":"footer_bg",
+        "label":"Footer BG"
+     },
+     {
+        "type":"color",
+        "id":"footer_title",
+        "label":"Footer Title",
+        "default":"#000"
+     },
+     {
+        "type":"color",
+        "id":"footer_text",
+        "label":"Footer Text",
+        "default":"#000"
+     },
+     {
+        "type":"color",
+        "id":"footer_link",
+        "label":"Footer Link",
+        "default":"#000"
+     },
+     {
+        "type":"color",
+        "id":"footer_link_hover",
+        "label":"Footer Link Hover"
+     },
+     {
+        "type":"checkbox",
+        "id":"footer_logo_enable",
+        "label":"Show footer logo"
+     },
+     {
+        "type":"image_picker",
+        "id":"footer_logo",
+        "label":"Logo image",
+        "info":"Size: 200x59"
+     },
+     {
+        "type":"textarea",
+        "id":"welcome_text",
+        "label":"Welcome text"
+     },
+     {
+        "type":"checkbox",
+        "id":"footer_social_enable",
+        "label":"Show social media icons"
+     },
+     {
+        "type":"color",
+        "id":"footer_social_link",
+        "label":" Social Media Icons Link",
+        "default":"#000"
+     },
+     {
+        "type":"color",
+        "id":"footer_social_link_hover",
+        "label":" Social Media Icons Link Hover",
+        "default":"#000"
+     },
+     {
+        "type":"color",
+        "id":"footer_social_link_border",
+        "label":" Social Media Icons Link Border",
+        "default":"#000"
+     },
+     {
+        "type":"color",
+        "id":"footer_social_link_hover_border",
+        "label":" Social Media Icons Link Hover Border",
+        "default":"#000"
+     },
+     {
+        "type":"color",
+        "id":"footer_social_link_hover_bg",
+        "label":" Social Media Icons Link Hover Bg",
+        "default":"#000"
+     },
+     {
+        "type":"checkbox",
+        "id":"footer_about_section",
+        "label":"Footer about section?",
+        "default":true
+     },
+     {
+        "type":"checkbox",
+        "id":"show_footer_best_products",
+        "label":"Use best products?"
+     },
+     {
+        "type":"text",
+        "id":"footer_best_heading",
+        "label":"Heading",
+        "default":"Best sellers"
+     },
+     {
+        "type":"collection",
+        "id":"footer_bestseller_collection",
+        "label":"Collection to use"
+     },
+     {
+        "type":"text",
+        "id":"footer_bestseller_collection_limit",
+        "label":"Product Limit",
+        "default":"4"
+     },
+     {
+        "type":"checkbox",
+        "id":"enable_footer_by_tags",
+        "label":"Enable footer tag and links section",
+        "default":true
+     },
+     {
+        "type":"text",
+        "id":"footer_tags_heading",
+        "label":"Heading",
+        "default":"Tags"
+     },
+     {
+        "type":"textarea",
+        "id":"footer_by_tags_list_tags",
+        "label":"footer by tags list"
+     },
+     {
+        "type":"color",
+        "id":"footer_tag_link",
+        "label":" Tag Link",
+        "default":"#000"
+     },
+     {
+        "type":"color",
+        "id":"footer_tag_link_hover",
+        "label":" Tag Link Hover",
+        "default":"#000"
+     },
+     {
+        "type":"color",
+        "id":"footer_tag_link_border",
+        "label":" Tag Link Border",
+        "default":"#000"
+     },
+     {
+        "type":"color",
+        "id":"footer_tag_link_hover_border",
+        "label":" Tag Link Hover Border",
+        "default":"#000"
+     },
+     {
+        "type":"color",
+        "id":"footer_tag_link_hover_bg",
+        "label":" Tag Link Hover Bg",
+        "default":"#000"
+     },
+     {
+        "type":"checkbox",
+        "id":"use_footer_links",
+        "label":"Show footer menu 4",
+        "default":true
+     },
+     {
+        "type":"text",
+        "id":"footer_menu_4_title",
+        "label":"Heading",
+        "default":"Footer menu 4"
+     },
+     {
+        "type":"link_list",
+        "id":"footer_menu_4",
+        "label":"Footer link"
+     },
+     {
+        "type":"checkbox",
+        "id":"footer_contact_enable",
+        "label":"Show contact information"
+     },
+     {
+        "type":"text",
+        "id":"footer_contact_heading",
+        "label":"Contact heading",
+        "default":"We are @"
+     },
+     {
+        "type":"text",
+        "id":"address_heading",
+        "label":"Address Heading"
+     },
+     {
+        "type":"textarea",
+        "id":"footer_address",
+        "label":"Address"
+     },
+     {
+        "type":"text",
+        "id":"email_heading",
+        "label":"Email Heading"
+     },
+     {
+        "type":"text",
+        "id":"footer_email",
+        "label":"Footer email 1"
+     },
+     {
+        "type":"text",
+        "id":"footer_email_2",
+        "label":"Footer email 2"
+     },
+     {
+        "type":"text",
+        "id":"phone_heading",
+        "label":"Phone Heading"
+     },
+     {
+        "type":"text",
+        "id":"footer_phone",
+        "label":"Footer phone 1"
+     },
+     {
+        "type":"text",
+        "id":"footer_phone_2",
+        "label":"Footer phone 2"
+     },
+     {
+        "type":"text",
+        "id":"fax_heading",
+        "label":"Footer fax"
+     },
+     {
+        "type":"text",
+        "id":"footer_fax_no",
+        "label":"Footer fax"
+     },
+     {
+        "type":"checkbox",
+        "id":"use_footer_bottom",
+        "label":"Use footer bottom?"
+     },
+     {
+        "type":"color",
+        "id":"footer_bottom_bg",
+        "label":"Footer bottom bg",
+        "default":"#000"
+     },
+     {
+        "type":"color",
+        "id":"copyright_text",
+        "label":"Copy Right Text Color",
+        "default":"#000"
+     },
+     {
+        "type":"color",
+        "id":"copyright_link",
+        "label":"Copy Right Link Color",
+        "default":"#000"
+     },
+     {
+        "type":"color",
+        "id":"copyright_link_hover",
+        "label":"Copy Right Link Hover Color",
+        "default":"#000"
+     },
+     {
+        "type":"textarea",
+        "id":"copyright",
+        "label":"Copy Right Text",
+        "default":"Copyright"
+     },
+     {
+        "type":"checkbox",
+        "id":"use_powered_by",
+        "label":"Use Powered By"
+     },
+     {
+        "type":"checkbox",
+        "id":"footer_show_methods_of_payment",
+        "label":"Show methods of paymemt"
+     },
+     {
+        "type":"image_picker",
+        "id":"payment_icon_1",
+        "label":"Image",
+        "info":"Size: 55x35"
+     },
+     {
+        "type":"image_picker",
+        "id":"payment_icon_2",
+        "label":"Image",
+        "info":"Size: 55x35"
+     },
+     {
+        "type":"image_picker",
+        "id":"payment_icon_3",
+        "label":"Image",
+        "info":"Size: 55x35"
+     },
+     {
+        "type":"image_picker",
+        "id":"payment_icon_4",
+        "label":"Image"
+     },
+     {
+        "type":"image_picker",
+        "id":"payment_icon_5",
+        "label":"Image",
+        "info":"Size: 55x35"
+     },
+     {
+        "type":"image_picker",
+        "id":"payment_icon_6",
+        "label":"Image",
+        "info":"Size: 55x35"
+     },
+     {
+        "type":"image_picker",
+        "id":"payment_icon_7",
+        "label":"Image",
+        "info":"Size: 55x35"
+     },
+     {
+        "type":"image_picker",
+        "id":"payment_icon_8",
+        "label":"Image",
+        "info":"Size: 55x35"
+     },
+     {
+        "type":"image_picker",
+        "id":"payment_icon_9",
+        "label":"Image",
+        "info":"Size: 55x35"
+     },
+     {
+        "type":"image_picker",
+        "id":"payment_icon_10",
+        "label":"Image",
+        "info":"Size: 55x35"
+     }
   ]
- 
-  }
+}
 {% endschema %}
