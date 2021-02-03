@@ -1,5 +1,8 @@
 .site-footer {
   padding-bottom: 50px;
+  .site-footer__links a {
+    width: auto;
+  }
 
   .site-footer_social-icons {
     margin-top: 25px;
