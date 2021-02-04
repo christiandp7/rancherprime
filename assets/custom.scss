@@ -89,6 +89,10 @@
 
 .site-footer {
   padding-bottom: 50px;
+  margin-top: 30px;
+  background-repeat: no-repeat;
+  background-position: 18% center;
+  background-size: contain;
 }
 .site-footer .site-footer__links a {
   width: auto;
@@ -151,5 +155,16 @@
 
 .copyright.center {
   float: none;
+  text-align: center;
+}
+
+.footer-vendors {
+  padding: 1.5em 0;
+}
+.footer-vendors .title-img {
+  text-align: center;
+  margin-bottom: 0.6em;
+}
+.footer-vendors .vendors-logos {
   text-align: center;
 }

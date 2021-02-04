@@ -1,3 +1,23 @@
+
+<div class="footer-vendors">
+   <div class="title-img">
+      <img src="{{ section.settings.vendors_img_title | img_url: 'medium' }}" alt="">
+   </div>
+   <div class="vendors-logos">
+      <img src="{{ section.settings.vendor_img_1 | img_url: 'medium' }}" alt="">
+      <img src="{{ section.settings.vendor_img_2 | img_url: 'medium' }}" alt="">
+      <img src="{{ section.settings.vendor_img_3 | img_url: 'medium' }}" alt="">
+      <img src="{{ section.settings.vendor_img_4 | img_url: 'medium' }}" alt="">
+      <img src="{{ section.settings.vendor_img_5 | img_url: 'medium' }}" alt="">
+      <img src="{{ section.settings.vendor_img_6 | img_url: 'medium' }}" alt="">
+      <img src="{{ section.settings.vendor_img_7 | img_url: 'medium' }}" alt="">
+      <img src="{{ section.settings.vendor_img_8 | img_url: 'medium' }}" alt="">
+      <img src="{{ section.settings.vendor_img_9 | img_url: 'medium' }}" alt="">
+      <img src="{{ section.settings.vendor_img_10 | img_url: 'medium' }}" alt="">
+   </div>
+</div>
+
+
 <div data-section-id="{{ section.id }}"  data-section-type="footer-model-10" class="footer-model-10 footer-model-custom" style="border-top: 1px solid {{ section.settings.footer_border }};background-color:{{ section.settings.footer_bg_clr }};{% if section.settings.footer_bg_img %} background-image:url('{{ section.settings.image_1 | img_url: 'master' }}');background-repeat:no-repeat;background-size:cover;background-position:center;{% endif %}">
   
   <footer class="site-footer">  
@@ -209,8 +229,10 @@
      
   </div>
 </div>
-
+ 
 <style>
+  .footer-vendors { background-color: {{ section.settings.vendors_bg_color }};}
+  .footer-model-10 .site-footer { background-image: url({{ section.settings.silhouette | img_url: 'large' }}); }
   .footer-model-10 .site-footer__links a:hover,.footer-model-10 .office-mail a:hover {   color:{{ section.settings.footer_link_hover_clr }} !important;}
   .footer-model-10 .menu li a:hover { color:{{ section.settings.footer_menu_hover_clr }} !important;}
   .footer-model-10 .copyright a { color:{{ section.settings.copyright_link }};}
@@ -465,7 +487,81 @@
         "id":"copyright",
         "label":"Copyright",
         "default":"Copyright"
-     }
+     },
+     {
+         "type":"header",
+         "content":"Background silhouette"
+      },
+      {
+         "type": "image_picker",
+         "id": "silhouette",
+         "label": "Silhouette"
+      },
+      {
+         "type": "header",
+         "content": "Vendors"
+      },
+      {
+         "type": "color",
+         "id": "vendors_bg_color",
+         "label": "Vendors BG color",
+         "default": "#FFF"
+      },
+      {
+         "type": "image_picker",
+         "id": "vendors_img_title",
+         "label": "Vendors title img"
+      },
+      {
+         "type": "image_picker",
+         "id": "vendor_img_1",
+         "label": "Vendor img 1"
+      },
+      {
+         "type": "image_picker",
+         "id": "vendor_img_2",
+         "label": "Vendor img 2"
+      },
+      {
+         "type": "image_picker",
+         "id": "vendor_img_3",
+         "label": "Vendor img 3"
+      },
+      {
+         "type": "image_picker",
+         "id": "vendor_img_4",
+         "label": "Vendor img 4"
+      },
+      {
+         "type": "image_picker",
+         "id": "vendor_img_5",
+         "label": "Vendor img 5"
+      },
+      {
+         "type": "image_picker",
+         "id": "vendor_img_6",
+         "label": "Vendor img 6"
+      },
+      {
+         "type": "image_picker",
+         "id": "vendor_img_7",
+         "label": "Vendor img 7"
+      },
+      {
+         "type": "image_picker",
+         "id": "vendor_img_8",
+         "label": "Vendor img 8"
+      },
+      {
+         "type": "image_picker",
+         "id": "vendor_img_9",
+         "label": "Vendor img 9"
+      },
+      {
+         "type": "image_picker",
+         "id": "vendor_img_10",
+         "label": "Vendor img 10"
+      }
   ]
 }
 {% endschema %}
