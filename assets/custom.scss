@@ -10,6 +10,11 @@
   margin-top: 25px;
 }
 
+.silhouette {
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
 .top-bar-type-99 {
   text-align: center;
   display: flex;
@@ -35,6 +40,17 @@
 .header-type-8 .sticky-wrapper.is-sticky .menu-tool ul li a {
   color: #b78566 !important;
 }
+.header-type-8 .sticky-wrapper.is-sticky .header-search span,
+.header-type-8 .sticky-wrapper.is-sticky .header_currency ul select,
+.header-type-8 .sticky-wrapper.is-sticky .menu_bar_right i,
+.header-type-8 .sticky-wrapper.is-sticky .header-bar__module.cart .baskettop a.icon-cart-arrow i,
+.header-type-8 .sticky-wrapper.is-sticky .header_currency ul li.currency .selector-arrow::after {
+  color: #b78566 !important;
+}
+.header-type-8 .sticky-wrapper.is-sticky .header-bar__module.cart .baskettop a.icon-cart-arrow #cartCount {
+  background-color: #b78566 !important;
+  color: #fff;
+}
 
 .container.slider-content__container-right {
   margin-right: 0;
@@ -56,8 +72,11 @@
   width: 100%;
 }
 
+.box-icons-type .container-bg {
+  padding-bottom: 60px;
+}
 .box-icons-type .icon__wrapper {
-  margin: 0 2em;
+  margin: 1em 2em;
   padding: 0.8em;
 }
 .box-icons-type .icon__wrapper .icon__wrapper-inner {
@@ -90,9 +109,7 @@
 .site-footer {
   padding-bottom: 50px;
   margin-top: 30px;
-  background-repeat: no-repeat;
   background-position: 18% center;
-  background-size: contain;
 }
 .site-footer .site-footer__links a {
   width: auto;

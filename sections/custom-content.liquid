@@ -8,10 +8,18 @@
       background-color: {{ section.settings.background_color }};
     }
   {% endif %}
+
+  {% if section.settings.silhouette != blank %}
+  .custom-content-wrapper--{{ section.id }} .silhouette { 
+    background-image: url({{ section.settings.silhouette | img_url: 'large' }});
+    background-size: {{ section.settings.silhouette_bg-size }};
+    background-position: {{ section.settings.silhouette_bg-position }};
+  }
+  {% endif %}
 </style>
 
 <div class="custom-content-wrapper custom-content-wrapper--{{ section.id }} {% if section.settings.top_margin %}custom-content-wrapper--top-margin{% endif %} {% if section.settings.bottom_margin %}custom-content-wrapper--bottom-margin{% endif %} one-whole" data-section-id="{{ section.id }}" data-section-type="custom-content">
-  <div class="container-bg">
+  <div class="container-bg silhouette">
     {% if section.settings.heading_text != blank %}
       <h2 class="custom-content__section-header text-center">{{ section.settings.heading_text | escape }}</h2>
     {% endif %}
@@ -275,6 +283,29 @@
       "id": "bottom_margin",
       "label": "Bottom margin",
       "default": true
+    },
+    {
+      "type":"header",
+      "content":"Background silhouette"
+    },
+    {
+      "type": "image_picker",
+      "id": "silhouette",
+      "label": "Silhouette"
+    },
+    {
+      "type": "text",
+      "id": "silhouette_bg-position",
+      "label": "Silhouette bg position",
+      "default": "left center",
+      "info": "css property"
+    },
+    {
+      "type": "text",
+      "id": "silhouette_bg-size",
+      "label": "Silhouette bg size",
+      "default": "auto 80%",
+      "info": "css property"
     }
   ],
   "blocks": [

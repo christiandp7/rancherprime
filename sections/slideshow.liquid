@@ -69,7 +69,9 @@
   </div>
 </div>
 
- <div class="dt-sc-hr-invisible-large"></div>
+{% if section.settings.slideshow_margin_bottom %}
+   <div class="dt-sc-hr-invisible-large"></div>
+{% endif %}
 
 <script>  
   $(document).on('ready', function() {
@@ -189,6 +191,12 @@
         "label":"Navigation color",
         "default":"#fff",
         "info":"Default Value: #fff"
+     },
+     {
+        "type": "checkbox",
+        "id": "slideshow_margin_bottom",
+        "label": "Slideshow margin bottom",
+        "default": true
      },
      {
         "type":"paragraph",

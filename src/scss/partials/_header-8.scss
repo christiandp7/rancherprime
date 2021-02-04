@@ -7,5 +7,16 @@
     .menu-tool ul li a {
       color: $color-accent-primary !important;
     }
+    .header-search span,
+    .header_currency ul select,
+    .menu_bar_right i,
+    .header-bar__module.cart .baskettop a.icon-cart-arrow i,
+    .header_currency ul li.currency .selector-arrow::after {
+      color: $color-accent-primary !important;
+    }
+    .header-bar__module.cart .baskettop a.icon-cart-arrow #cartCount {
+      background-color: $color-accent-primary !important;
+      color: $color-primary;
+    }
   }
 }
