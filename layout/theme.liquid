@@ -405,46 +405,42 @@
 
   <main class="{% if template contains 'index' or template contains "about" %}main-home-content {% else %} main-content  {% endif %}">  
 
-    
-
-
-    {% unless template contains "contact" or template contains "index" or template contains "about" %}
-   
+    {% unless template contains "contact" or template contains "index" or template contains "about" or template contains "page" %}
     <div class="wrapper">
-      {% endunless %}
+    {% endunless %}
+
       {% if template contains 'index' %}
-
-      <div class="grid-uniform">
-        {% if settings.homepage_sidebar %}
-        <div class="grid__item wide--one-quarter post-large--one-quarter large--one-quarter">
-          <div class="homepage_sidebar">
-            {% section 'home-sidebar-category' %}
-            {% section 'home-sidebar-bestsellers' %} 
-            {% section 'home-sidebar-deals' %} 
-            {% section 'home-sidebar-promoimage' %}
-            {% section 'home-sidebar-tags' %}            
-            {% section 'home-sidebar-featured-post' %}
-            {% section 'home-sidebar-instagram' %}
-            {% section 'home-sidebar-newsletter' %}
-            {% section 'home-sidebar-testimonials' %}
-            {% section 'home-sidebar-icon-text' %}
+        <div class="grid-uniform">
+          {% if settings.homepage_sidebar %}
+          <div class="grid__item wide--one-quarter post-large--one-quarter large--one-quarter">
+            <div class="homepage_sidebar">
+              {% section 'home-sidebar-category' %}
+              {% section 'home-sidebar-bestsellers' %} 
+              {% section 'home-sidebar-deals' %} 
+              {% section 'home-sidebar-promoimage' %}
+              {% section 'home-sidebar-tags' %}            
+              {% section 'home-sidebar-featured-post' %}
+              {% section 'home-sidebar-instagram' %}
+              {% section 'home-sidebar-newsletter' %}
+              {% section 'home-sidebar-testimonials' %}
+              {% section 'home-sidebar-icon-text' %}
+            </div>
           </div>
+
+          <div class="{% if settings.homepage_sidebar %} grid__item wide--three-quarters post-large--three-quarters large--three-quarters" {% elsif settings.homepage_sidebar %} "grid__item" {% endif %} >                   
+            {{ content_for_layout }}		          
+          </div>
+
+
+          {% else %}       
+          <div class="grid__item">  
+            {{ content_for_layout }}		          
+          </div>  
+          {% endif %}
         </div>
-
-        <div class="{% if settings.homepage_sidebar %} grid__item wide--three-quarters post-large--three-quarters large--three-quarters" {% elsif settings.homepage_sidebar %} "grid__item" {% endif %} >                   
-          {{ content_for_layout }}		          
-        </div>
-
-
-        {% else %}       
-        <div class="grid__item">  
-
-          {{ content_for_layout }}		          
-        </div>  
-        {% endif %}
-      </div>
       {% endif %}
-      {% unless template contains 'index' %}
+
+      {% unless template contains 'index' or template contains 'page' %}
       <div class="grid-uniform">
         <div class="grid__item">  
           <div class="container-bg"> 
@@ -453,12 +449,21 @@
         </div>
       </div>
       {% endunless %}
-      {% unless template contains "contact" or template contains "index" or template contains "about" %}
+
+      {% if template contains 'page' %}
+        <div class="grid__item">  
+          {{ content_for_layout }}		          
+        </div> 
+      {% endif %}
+
+    {% unless template contains "contact" or template contains "index" or template contains "about" or template contains "page" %}
     </div>
     {% endunless %}
-    {% unless template contains "about" or template contains "index"  %}
+
+    {% unless template contains "about" or template contains "index" or template contains 'page'  %}
     <div class="dt-sc-hr-invisible-large"></div>
     {% endunless %}
+    
   </main>
 
 
