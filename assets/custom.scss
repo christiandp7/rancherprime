@@ -38,40 +38,66 @@
   color: white !important;
 }
 
-.template-index .header-type-8 .site-header {
+.template-index .header-type-8 .site-header,
+.template-page .header-type-8 .site-header {
   top: 60px;
 }
 @media screen and (max-width: 967px) {
-  .template-index .header-type-8 .site-header {
+  .template-index .header-type-8 .site-header,
+.template-page .header-type-8 .site-header {
     top: 0;
   }
 }
-
-.header-type-8 .sticky-wrapper .menu-tool ul li a {
-  color: #b78566 !important;
+@media screen and (min-width: 968px) {
+  .template-index .header-type-8 .site-header .sticky-wrapper:not(.is-sticky) .menu-tool ul li a,
+.template-page .header-type-8 .site-header .sticky-wrapper:not(.is-sticky) .menu-tool ul li a {
+    color: #fff;
+  }
+  .template-index .header-type-8 .site-header .sticky-wrapper:not(.is-sticky) .menu-tool ul li a.current,
+.template-page .header-type-8 .site-header .sticky-wrapper:not(.is-sticky) .menu-tool ul li a.current {
+    border-bottom: solid 2px #e76222;
+  }
+  .template-index .header-type-8 .site-header .sticky-wrapper:not(.is-sticky) .header-search span,
+.template-index .header-type-8 .site-header .sticky-wrapper:not(.is-sticky) .header_currency ul select,
+.template-index .header-type-8 .site-header .sticky-wrapper:not(.is-sticky) .menu_bar_right i,
+.template-index .header-type-8 .site-header .sticky-wrapper:not(.is-sticky) .header-bar__module.cart .baskettop a.icon-cart-arrow i,
+.template-index .header-type-8 .site-header .sticky-wrapper:not(.is-sticky) .header_currency ul li.currency .selector-arrow::after,
+.template-page .header-type-8 .site-header .sticky-wrapper:not(.is-sticky) .header-search span,
+.template-page .header-type-8 .site-header .sticky-wrapper:not(.is-sticky) .header_currency ul select,
+.template-page .header-type-8 .site-header .sticky-wrapper:not(.is-sticky) .menu_bar_right i,
+.template-page .header-type-8 .site-header .sticky-wrapper:not(.is-sticky) .header-bar__module.cart .baskettop a.icon-cart-arrow i,
+.template-page .header-type-8 .site-header .sticky-wrapper:not(.is-sticky) .header_currency ul li.currency .selector-arrow::after {
+    color: #fff;
+  }
+  .template-index .header-type-8 .site-header .sticky-wrapper:not(.is-sticky) .header-bar__module.cart .baskettop a.icon-cart-arrow #cartCount,
+.template-page .header-type-8 .site-header .sticky-wrapper:not(.is-sticky) .header-bar__module.cart .baskettop a.icon-cart-arrow #cartCount {
+    background-color: #fff;
+  }
 }
-.header-type-8 .sticky-wrapper .header-search span,
-.header-type-8 .sticky-wrapper .header_currency ul select,
-.header-type-8 .sticky-wrapper .menu_bar_right i,
-.header-type-8 .sticky-wrapper .header-bar__module.cart .baskettop a.icon-cart-arrow i,
-.header-type-8 .sticky-wrapper .header_currency ul li.currency .selector-arrow::after {
-  color: #b78566 !important;
+@media screen and (max-width: 967px) {
+  .template-index .header-type-8 .site-header .sticky-wrapper:not(.is-sticky) .header-bar__module.cart .baskettop a.icon-cart-arrow #cartCount,
+.template-page .header-type-8 .site-header .sticky-wrapper:not(.is-sticky) .header-bar__module.cart .baskettop a.icon-cart-arrow #cartCount {
+    color: #fff;
+  }
 }
-.header-type-8 .sticky-wrapper .header-bar__module.cart .baskettop a.icon-cart-arrow #cartCount {
-  background-color: #b78566 !important;
+.template-index .header-type-8 .site-header .sticky-wrapper.is-sticky .header-bar__module.cart .baskettop a.icon-cart-arrow #cartCount,
+.template-page .header-type-8 .site-header .sticky-wrapper.is-sticky .header-bar__module.cart .baskettop a.icon-cart-arrow #cartCount {
   color: #fff;
 }
 @media screen and (max-width: 967px) {
-  .header-type-8 .menu-icon li a {
+  .template-index .header-type-8 .site-header .menu-icon li a,
+.template-page .header-type-8 .site-header .menu-icon li a {
     padding: 12px 10px;
   }
 }
 @media screen and (max-width: 967px) {
-  .header-type-8 .detail {
+  .template-index .header-type-8 .site-header .detail,
+.template-page .header-type-8 .site-header .detail {
     top: -2px;
   }
 }
-.header-type-8 .header-mobile #showLeftPush {
+.template-index .header-type-8 .site-header .header-mobile #showLeftPush,
+.template-page .header-type-8 .site-header .header-mobile #showLeftPush {
   color: #b78566;
 }
 
