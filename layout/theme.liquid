@@ -315,6 +315,9 @@
             <div class="wrapper">
               <div class="grid--full site-header__menubar"> 
 
+
+                {% include 'logo', logo_mobile: 'only_mobile' %}
+                
                 {% comment %}{% include 'logo' %}{% endcomment %}
                 <div class="menubar-section order-header">
                   <div class="desktop-megamenu">     
@@ -392,10 +395,14 @@
     </div>
   </div>  
   {% endcase %}
+
+  {% comment %}
   {% unless template contains "index" %}
      {% include 'breadcrumb' %} 
-
   {% endunless %}
+  {% endcomment %}
+
+
   <main class="{% if template contains 'index' or template contains "about" %}main-home-content {% else %} main-content  {% endif %}">  
 
     

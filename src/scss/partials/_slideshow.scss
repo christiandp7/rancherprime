@@ -2,11 +2,17 @@
   margin-right: 0;
   padding-right: 3em;
   max-width: 50%;
+  @include media-max-width(967px) {
+    max-width: 100%;
+  }
 }
 .container.slider-content__container-left {
   margin-left: 0;
   padding-left: 3em;
   max-width: 50%;
+  @include media-max-width(967px) {
+    max-width: 100%;
+  }
 }
 
 .slide-desc-text {

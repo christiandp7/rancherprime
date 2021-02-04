@@ -1,0 +1,24 @@
+@mixin transition-ease($duration) {
+  -webkit-transition: all $duration ease;
+  -moz-transition: all $duration ease;
+  -ms-transition: all $duration ease;
+  -o-transition: all $duration ease;
+  transition: all $duration ease;
+}
+
+@mixin media-min-width($breakpoint) {
+  @media screen and (min-width: $breakpoint) {
+    @content;
+  }
+}
+@mixin media-max-width($breakpoint) {
+  @media screen and (max-width: $breakpoint) {
+    @content;
+  }
+}
+
+@mixin media-min-max-width($breakpointMin, $breakpointMax) {
+  @media screen and (min-width: $breakpointMin) and (max-width: $breakpointMax) {
+    @content;
+  }
+}

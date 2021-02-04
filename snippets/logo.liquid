@@ -1,16 +1,16 @@
 {% if template == 'index' %}
-<h1 class="site-header__logo order-header" itemscope itemtype="http://schema.org/Organization">
-  {% else %}
-  <div class="h1 site-header__logo order-header" itemscope itemtype="http://schema.org/Organization">
-    {% endif %}
-    {% if settings.logo_use_image %}
+  <h1 class="site-header__logo order-header {{ logo_mobile }}" itemscope itemtype="http://schema.org/Organization">
+{% else %}
+  <div class="h1 site-header__logo order-header {{ logo_mobile }}" itemscope itemtype="http://schema.org/Organization">
+{% endif %}
+{% if settings.logo_use_image %}
     <a href="/">
       <img class="normal-logo" src="{{ 'logo.png' | asset_url }}" alt="{{ shop.name }}" itemprop="logo">
     </a>
-    {% else %}
+  {% else %}
     <a href="/" class="logo_name">{{ shop.name }}</a>
-    {% endif %}
-    {% if template == 'index' %}
+  {% endif %}
+  {% if template == 'index' %}
     </h1>
   {% else %}
   </div>

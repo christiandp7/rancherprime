@@ -118,7 +118,7 @@
       
       {% assign half_links = forloop.length | divided_by: 2 %}
       {% if forloop.index == half_links %}
-        <li>{% include 'logo' %}</li>
+        <li>{% include 'logo', logo_mobile: 'only_desktop' %}</li>
       {% endif %}
 
     {% endfor %}
