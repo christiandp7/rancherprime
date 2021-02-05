@@ -33,3 +33,15 @@
   background-repeat: no-repeat;
   background-size: contain;
 }
+
+.quote-dash {
+  position: relative;
+  &:before {
+    content: "";
+    position: absolute;
+    border-bottom: solid 2px $color-primary;
+    left: -30px;
+    top: 0.8em;
+    width: 20px;
+  }
+}

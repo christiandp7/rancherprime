@@ -36,6 +36,11 @@
         p {
           color: $color-secondary;
           letter-spacing: 2px;
+          &.quote-dash {
+            &:before {
+              border-bottom: 2px solid $color-secondary;
+            }
+          }
         }
         h5 {
           margin-bottom: 20px;

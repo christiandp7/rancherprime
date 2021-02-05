@@ -10,7 +10,7 @@
   {% endif %}
 
   {% if section.settings.silhouette != blank %}
-  .custom-content-wrapper--{{ section.id }} .silhouette { 
+  .silhouette.custom-content-wrapper--{{ section.id }} { 
     background-image: url({{ section.settings.silhouette | img_url: 'large' }});
     background-size: {{ section.settings.silhouette_bg-size }};
     background-position: {{ section.settings.silhouette_bg-position }};
@@ -18,8 +18,8 @@
   {% endif %}
 </style>
 
-<div class="custom-content-wrapper custom-content-wrapper--{{ section.id }} {% if section.settings.top_margin %}custom-content-wrapper--top-margin{% endif %} {% if section.settings.bottom_margin %}custom-content-wrapper--bottom-margin{% endif %} one-whole" data-section-id="{{ section.id }}" data-section-type="custom-content">
-  <div class="container-bg silhouette">
+<div class="custom-content-wrapper silhouette custom-content-wrapper--{{ section.id }} {% if section.settings.top_margin %}custom-content-wrapper--top-margin{% endif %} {% if section.settings.bottom_margin %}custom-content-wrapper--bottom-margin{% endif %} one-whole" data-section-id="{{ section.id }}" data-section-type="custom-content">
+  <div class="{% if section.settings.container_on %}container{% else %}container-bg{% endif %}">
     {% if section.settings.heading_text != blank %}
       <h2 class="custom-content__section-header text-center">{{ section.settings.heading_text | escape }}</h2>
     {% endif %}
@@ -84,20 +84,34 @@
                 </style>
 
 
-                <div class="text-{{ block.settings.align_text }}">
-                  {% if block.settings.heading_text != blank %}
-                    <h2 class="custom__block-heading-text {{ block.settings.heading_style }}">{{ block.settings.heading_text | escape }}</h2>
+                <div class="text-{{ block.settings.align_text }} {% if block.settings.quote_mode %}as-quote{% endif %}">
+
+                  {% if block.settings.quote_mode %}
+                    {% if block.settings.heading_text != blank %}
+                      <p class="quote-dash">{{ block.settings.heading_text | escape }}</p>
+                    {% endif %}
+                    {% if block.settings.quote_text != blank %}
+                      <div class="rte-setting">
+                        <h3 class="{{ block.settings.heading_style }}">{{ block.settings.quote_text }}</h3>
+                      </div>
+                    {% endif %}
+                  {% else %}
+                    {% if block.settings.heading_text != blank %}
+                      <h2 class="custom__block-heading-text {{ block.settings.heading_style }}">{{ block.settings.heading_text | escape }}</h2>
+                    {% endif %}
+                    {% if block.settings.paragraph_text != blank %}
+                      <div class="custom__block-body-text rte-setting">
+                        {{ block.settings.paragraph_text }}
+                        {% if block.settings.button_text != blank %}
+                          <a href="{{ block.settings.button_link }}" class="btn">{{ block.settings.button_text }}</a>
+                        {% endif %}
+                      </div>
+                    {% endif %}
                   {% endif %}
-                  {% if block.settings.paragraph_text != blank %}
-                    <div class="custom__block-body-text rte-setting">
-                      {{ block.settings.paragraph_text }}
-                      {% if block.settings.button_text != blank %}
-                        <a href="{{ block.settings.button_link }}" class="btn">{{ block.settings.button_text }}</a>
-                      {% endif %}
-                    </div>
-                  {% endif %}
-                  
+
                 </div>
+
+
               {% when 'video' %}
 
                 {% comment %}
@@ -254,7 +268,7 @@
 
 {% schema %}
 {
-  "name": "Custom content",
+  "name": "Custom content our story",
   "class": "index-section index-section--custom-content",
   "settings": [
     {
@@ -285,6 +299,12 @@
       "type": "checkbox",
       "id": "bottom_margin",
       "label": "Bottom margin",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "container_on",
+      "label": "Container",
       "default": true
     },
     {
@@ -491,6 +511,18 @@
               "label": "Right"
             }
           ]
+        },
+        {
+          "type": "checkbox",
+          "id": "quote_mode",
+          "label": "Quote Mode",
+          "default": false,
+          "info": "Convert Text into a quote structure"
+        },
+        {
+          "type": "text",
+          "id": "quote_text",
+          "label": "Quote"
         }
       ]
     },
@@ -822,20 +854,6 @@
               "label": "Bottom"
             }
           ]
-        }
-      ]
-    }
-  ],
-  "presets": [
-    {
-      "name": "Custom content",
-      "category": "Advanced layout",
-      "blocks": [
-        {
-          "type": "text"
-        },
-        {
-          "type": "image"
         }
       ]
     }

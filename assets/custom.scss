@@ -20,6 +20,18 @@
   background-size: contain;
 }
 
+.quote-dash {
+  position: relative;
+}
+.quote-dash:before {
+  content: "";
+  position: absolute;
+  border-bottom: solid 2px #fff;
+  left: -30px;
+  top: 0.8em;
+  width: 20px;
+}
+
 .top-bar-type-99 {
   text-align: center;
   display: flex;
@@ -179,6 +191,11 @@
   margin-top: 25px;
 }
 
+.as-quote {
+  border: solid 5px #e76222;
+  padding: 3em 4em;
+}
+
 .testimonial-type-custom.testimonial-type-16 .testimonial-content {
   text-align: initial;
 }
@@ -214,6 +231,9 @@
 .testimonial-type-custom .testimonial-container .testimonial .testimonial-inner p {
   color: #000;
   letter-spacing: 2px;
+}
+.testimonial-type-custom .testimonial-container .testimonial .testimonial-inner p.quote-dash:before {
+  border-bottom: 2px solid #000;
 }
 .testimonial-type-custom .testimonial-container .testimonial .testimonial-inner h5 {
   margin-bottom: 20px;

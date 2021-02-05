@@ -39,7 +39,7 @@
                         <div class="testimonial">
                           <div class="testimonial-inner">
                             {% if block.settings.test_title != blank %}
-                            <p class="quote-dash">{{ block.settings.test_title }}</p>
+                            <p>{{ block.settings.test_title }}</p>
                             {% endif %}
                             {% if block.settings.text_desc != blank %}
                               <h5 style="color:{{block.settings.des_color }}">{{ block.settings.text_desc }}</h5>
@@ -161,7 +161,7 @@
 
 {% schema %}
 {
-  "name":"Testimonial Custom",
+  "name":"Testimonial - Our Story",
   "class":"index-section",
   "settings":[
     {
@@ -275,20 +275,6 @@
           "id":"avatar",
           "label":"Avatar Img",
           "info": "Size 400x600"
-        }
-      ]
-    }
-  ],
-  "presets":[
-    {
-      "name":"Testimonial Custom",
-      "category":"Text",
-      "blocks":[
-        {
-          "type":"text"
-        },
-        {
-          "type":"text"
         }
       ]
     }
