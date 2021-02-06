@@ -160,9 +160,14 @@
 .box-icons-type .container-bg {
   padding-bottom: 60px;
 }
-.box-icons-type .icon__wrapper {
+.box-icons-type .icon__wrapper-outer {
   margin: 1em 2em;
+}
+.box-icons-type .icon__wrapper {
   padding: 0.8em;
+  max-width: 550px;
+  position: relative;
+  margin: 0 auto;
 }
 .box-icons-type .icon__wrapper .icon__wrapper-inner {
   text-align: center;
@@ -181,6 +186,23 @@
 }
 .box-icons-type .icon__wrapper .icon__wrapper-inner .icon-text {
   margin-top: 20px;
+}
+.box-icons-type .icon__wrapper .icon__wrapper-inner a.btn {
+  margin-top: 18px;
+}
+.box-icons-type.with-image-bg .icon__wrapper-inner {
+  padding-top: 10em;
+}
+.box-icons-type.with-image-bg .icon__wrapper-inner .icon-img {
+  position: absolute;
+  top: 0;
+  margin: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
 }
 
 .custom-content .custom__block-heading-text,

@@ -2,9 +2,15 @@
   .container-bg {
     padding-bottom: 60px;
   }
-  .icon__wrapper {
+  .icon__wrapper-outer {
     margin: 1em 2em;
+  }
+  .icon__wrapper {
     padding: 0.8em;
+    max-width: 550px;
+    position: relative;
+    margin: 0 auto;
+
     .icon__wrapper-inner {
       text-align: center;
       padding: 3em 3em;
@@ -22,6 +28,27 @@
       }
       .icon-text {
         margin-top: 20px;
+      }
+      a.btn {
+        margin-top: 18px;
+      }
+    }
+  }
+
+  // with Image bg
+  &.with-image-bg {
+    .icon__wrapper-inner {
+      padding-top: 10em;
+      .icon-img {
+        position: absolute;
+        top: 0;
+        margin: 0;
+        left: 0;
+        width: 100%;
+        height: 50%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: bottom;
       }
     }
   }

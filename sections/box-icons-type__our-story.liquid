@@ -1,5 +1,5 @@
 
-<div data-section-id="{{ section.id }}"  data-section-type="box-team-type" class="box-icons-type section--{{ section.id }}">
+<div data-section-id="{{ section.id }}"  data-section-type="box-team-type" class="box-icons-type {% if section.settings.image_bg_enable %}with-image-bg{% endif %} section--{{ section.id }}">
   <div class="container-bg silhouette">
      <div class="container">
       {% if section.settings.title != blank  %}
@@ -22,7 +22,7 @@
          {%- assign block_width = 'wide--one-quarter post-large--one-quarter large--one-half medium--one-whole small-grid__item' -%}
          {% endcase %}
          <div class="grid__item {{ block_width }}">
-
+ 
          {% comment %}
          <div class="team-wrapper" >
             <div class="team-inner-wrapper" style="border:1px solid {{block.settings.team_border_clr}}" >
@@ -56,17 +56,22 @@
             .block--{{ block.id }} .icon-text p {
                color: {{ block.settings.team_desc_clr }};
             }
+            {% if section.settings.image_bg_enable %}
+            .block--{{ block.id }} .icon-img { background-image: url({{ block.settings.team_6_image | img_url: '500x' }}); }
+            {% endif %}
          </style>
 
       <div class="icon__wrapper-outer">
          <div class="icon__wrapper block--{{ block.id }}"  style="background-color: {{ block.settings.bg_color }};">
-            <div class="icon__wrapper-inner">
+            <div class="icon__wrapper-inner {{ section.settings.content_alignment }}">
 
                <div class="icon-img">
                {% if block.settings.team_6_image != blank %}
-               <img src="{{ block.settings.team_6_image | img_url: '1024x1024' }}" alt="" title="" /> 
+                  {% unless section.settings.image_bg_enable  %}
+                     <img src="{{ block.settings.team_6_image | img_url: '550x' }}" alt="" title="" /> 
+                  {% endunless %}
                {% else %}
-               <img src="//via.placeholder.com/420x420">
+                  <img src="//via.placeholder.com/420x420">
                {% endif %}
                </div>
 
@@ -78,9 +83,14 @@
                <div class="icon-text">{{block.settings.team_desc }}</div>
                {% endif %}
 
+               {% if block.settings.btn_text != blank %}
+               <a href="{{block.settings.btn_link }} " class="btn" style="background-color:{{block.settings.btn_bg_clr}};border: 2px solid {{block.settings.btn_bg_clr}};color:{{block.settings.btn_txt_clr}};">{{block.settings.btn_text }}</a>
+               {% endif %}
+ 
             </div>
          </div>
       </div>
+
 
 
          </div>        
@@ -103,6 +113,7 @@
 }
 {% endif %}
 
+
   .box-icon-type .team-inner-wrapper .team-detail::after{background:{{section.settings.team_desc_clr}};}
 
   .box-icon-type .team-inner-wrapper .team-detail::before{background:{{section.settings.team_desc_clr}};}
@@ -111,7 +122,7 @@
 
   .box-icon-type .team-wrapper:hover p{color:{{section.settings.team_hover_desc_clr}}!important;}
 
-  .box-icon-type .team-wrapper:hover a{background:{{section.settings.btn_hoverbg_clr}} !important;color:{{section.settings.btn_hovertxt_clr}}!important;}
+  .box-icon-type .team-wrapper:hover a.btn{background:{{section.settings.btn_hoverbg_clr}} !important;color:{{section.settings.btn_hovertxt_clr}}!important;}
 
   .box-icon-type .team-wrapper:hover .team-inner-wrapper{border:1px solid {{section.settings.settings.btn_hoverbg_clr}} !important;}
 
@@ -121,7 +132,7 @@
 
 {% schema %}
 {
-   "name":"Box Icon Type",
+   "name":"Box Icon Type Our Story",
    "class":"index-section",
    "settings":[
       {
@@ -164,6 +175,22 @@
          "id":"btn_hovertxt_clr",
          "label":"Button Hover Text Color",
          "default":"#000"
+      },
+      {
+         "type":"checkbox",
+         "id":"image_bg_enable",
+         "label":"Enable Image BG?",
+         "default": false
+      },
+      {
+         "type": "radio",
+         "id": "content_alignment",
+         "label": "Content alignment",
+         "options": [
+            { "value": "text-left", "label": "Left"},
+            { "value": "text-center", "label": "Center"},
+            { "value": "text-right", "label": "Right"}
+         ]
       },
       {
          "type":"header",
@@ -213,6 +240,7 @@
                "label":"Image",
                "info":"Size: 279x336"
             },
+            
             {
                "type":"text",
                "id":"team_title",
@@ -259,23 +287,6 @@
                "id":"btn_txt_clr",
                "label":"Button Text Color",
                "default":"#000"
-            }
-         ]
-      }
-   ],
-   "presets":[
-      {
-         "name":"Box Icon Type",
-         "category":"Image",
-         "blocks":[
-            {
-               "type":"Icon"
-            },
-            {
-               "type":"Icon"
-            },
-            {
-               "type":"Icon"
             }
          ]
       }
