@@ -1,0 +1,88 @@
+
+
+<div class="carousel carousel--{{ section.id }}">
+  <div class="grid__item shortcodes-section">
+      <!--dt-sc-toggle-frame-set starts-->
+      <div class="carousel-container">
+          <ul class="carousel-ul--{{ section.id }} owl-carousel owl-theme">
+            {% for block in section.blocks %}
+              <li>
+                <img src="{{ block.settings.image | img_url: 'large' }}">
+              </li>
+            {% endfor %}  
+          </ul>
+    </div>     
+      <!--dt-sc-toggle-frame-set ends-->
+
+      <script type="text/javascript">       
+        $(document).ready(function(){
+          var type8_products = $(".carousel-ul--{{ section.id }}");
+          type8_products.owlCarousel({
+            loop:true,                                        
+            nav:false,
+            margin:10,
+          // navContainer: ".wide-owl__nav.{{ section.id }}",                                        
+            dots: false,
+            smartSpeed : 1000,
+            navSpeed : 1000,
+            items:1   ,
+            responsive:{
+              0:{
+                items:2
+              },
+              600:{
+                items:3
+              },
+              720:{
+                items:4
+              }
+            }
+          });     
+        });
+      </script>
+  
+</div>
+</div>
+<div class="dt-sc-hr-invisible-medium"></div>
+
+
+
+
+{% schema %}
+{
+	"name": "Carousel",
+	"max_blocks": 15,
+	"settings": [],
+	"blocks" : [
+		{
+			"type": "image",
+			"name": "Image",
+			"settings": [
+				{
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image",
+          "info": "Please use the same dimensions for all images."
+        }
+			]
+		}
+	],
+  "presets": [
+    {
+      "name": "Carousel",
+      "category": "Image",
+      "blocks": [
+        {
+          "type": "image"
+        },
+        {
+          "type": "image"
+        },
+        {
+          "type": "image"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

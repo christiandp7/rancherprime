@@ -1,0 +1,27 @@
+.carousel {
+  &.carousel-full {
+    .owl-carousel {
+      .owl-item img {
+        width: 100%;
+      }
+
+      .owl-prev,
+      .owl-next {
+        position: absolute;
+        top: 50%;
+        cursor: pointer;
+        padding: 0.3em 0.8em;
+
+        span {
+          font-size: 2em;
+        }
+      }
+      .owl-prev {
+        left: 25px;
+      }
+      .owl-next {
+        right: 25px;
+      }
+    }
+  }
+}

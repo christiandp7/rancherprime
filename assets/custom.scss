@@ -326,6 +326,27 @@
   margin-top: 25px;
 }
 
+.carousel.carousel-full .owl-carousel .owl-item img {
+  width: 100%;
+}
+.carousel.carousel-full .owl-carousel .owl-prev,
+.carousel.carousel-full .owl-carousel .owl-next {
+  position: absolute;
+  top: 50%;
+  cursor: pointer;
+  padding: 0.3em 0.8em;
+}
+.carousel.carousel-full .owl-carousel .owl-prev span,
+.carousel.carousel-full .owl-carousel .owl-next span {
+  font-size: 2em;
+}
+.carousel.carousel-full .owl-carousel .owl-prev {
+  left: 25px;
+}
+.carousel.carousel-full .owl-carousel .owl-next {
+  right: 25px;
+}
+
 .site-footer {
   padding-bottom: 50px;
   margin-top: 30px;
