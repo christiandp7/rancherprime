@@ -305,7 +305,11 @@
 }
 
 .faqs-text p.dt-sc-toggle-accordion {
+  padding-bottom: 15px;
   font-size: 1.5em;
+}
+.faqs-text p.dt-sc-toggle-accordion:not(.active) {
+  border-bottom: 2px solid #b78566;
 }
 .faqs-text p.dt-sc-toggle-accordion.active, .faqs-text p.dt-sc-toggle-accordion.active p {
   background-color: transparent;
@@ -315,6 +319,11 @@
 }
 .faqs-text .dt-sc-toggle-content {
   padding-left: 0;
+  border-bottom: 2px solid #b78566;
+  margin-bottom: 15px;
+}
+.faqs-text .btn {
+  margin-top: 25px;
 }
 
 .site-footer {

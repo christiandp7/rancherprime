@@ -1,5 +1,9 @@
 .faqs-text {
   p.dt-sc-toggle-accordion {
+    padding-bottom: 15px;
+    &:not(.active) {
+      border-bottom: 2px solid #b78566;
+    }
     font-size: 1.5em;
     &.active,
     &.active p {
@@ -11,5 +15,11 @@
   }
   .dt-sc-toggle-content {
     padding-left: 0;
+    border-bottom: 2px solid #b78566;
+    margin-bottom: 15px;
+  }
+
+  .btn {
+    margin-top: 25px;
   }
 }

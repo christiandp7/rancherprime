@@ -37,6 +37,11 @@
       .header-bar__module.cart .baskettop a.icon-cart-arrow #cartCount {
         color: $color-primary;
       }
+      .menu-tool ul li a {
+        &.current {
+          // border-bottom: solid 2px $color-accent-primary;
+        }
+      }
     }
   }
 
