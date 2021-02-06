@@ -1,0 +1,15 @@
+.faqs-text {
+  p.dt-sc-toggle-accordion {
+    font-size: 1.5em;
+    &.active,
+    &.active p {
+      background-color: transparent;
+    }
+    a {
+      color: $color-primary;
+    }
+  }
+  .dt-sc-toggle-content {
+    padding-left: 0;
+  }
+}

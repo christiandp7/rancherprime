@@ -212,6 +212,9 @@
 .custom-content .btn {
   margin-top: 25px;
 }
+.custom-content .custom__block-image {
+  background-color: transparent !important;
+}
 
 .as-quote {
   border: solid 5px #e76222;
@@ -299,6 +302,19 @@
 }
 .testimonial-type-custom .testimonial-container .testimonial-img img {
   max-width: 400px;
+}
+
+.faqs-text p.dt-sc-toggle-accordion {
+  font-size: 1.5em;
+}
+.faqs-text p.dt-sc-toggle-accordion.active, .faqs-text p.dt-sc-toggle-accordion.active p {
+  background-color: transparent;
+}
+.faqs-text p.dt-sc-toggle-accordion a {
+  color: #fff;
+}
+.faqs-text .dt-sc-toggle-content {
+  padding-left: 0;
 }
 
 .site-footer {
