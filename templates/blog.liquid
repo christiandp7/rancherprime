@@ -1,19 +1,19 @@
 
 {% section 'slideshow__blog' %}
 
-
-{% paginate blog.articles by 6 %}
-<div class="blog-design-4">
-  <div class="blog-section position-change">
-    {% comment %} {% include 'blog-sidebar' %} {% endcomment %}
-        <div class="second">
-    {% section 'blog' %}
+<div class="container">
+  {% paginate blog.articles by 6 %}
+  <div class="blog-design-4">
+    <div class="blog-section position-change">
+      {% comment %} {% include 'blog-sidebar' %} {% endcomment %}
+          <div class="second">
+      {% section 'blog' %}
+      </div>
     </div>
   </div>
-  
+  {% endpaginate %}
 </div>
 
-{% endpaginate %}
 
 
 
