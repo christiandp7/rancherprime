@@ -2158,6 +2158,10 @@
             "label": "Right Sidebar"
           },
           {
+            "value": "container",
+            "label": "Container"
+          },
+          {
             "value": "full_width",
             "label": "Full Width"
           }

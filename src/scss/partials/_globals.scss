@@ -45,3 +45,17 @@
     width: 20px;
   }
 }
+
+// Underlines HEadings
+.heading-underline {
+  position: relative;
+  margin-bottom: 50px !important;
+  &::after {
+    content: "";
+    position: absolute;
+    width: 75px;
+    bottom: -25px;
+    left: 0;
+    border-bottom: solid 2px $color-accent-secondary;
+  }
+}

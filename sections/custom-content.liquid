@@ -24,7 +24,7 @@
       <h2 class="custom-content__section-header text-center">{{ section.settings.heading_text | escape }}</h2>
     {% endif %}
 
-    <div class="custom-content">
+    <div class="custom-content wow fadeInUp animated">
       {% for block in section.blocks %}
         {% case block.settings.width %}
           {% when '25%' %}
