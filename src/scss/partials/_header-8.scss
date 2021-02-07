@@ -1,5 +1,7 @@
 .template-index .header-type-8 .site-header,
-.template-page .header-type-8 .site-header {
+.template-page .header-type-8 .site-header,
+.template-blog .header-type-8 .site-header {
+  position: absolute;
   top: 60px;
   @include media-max-width(967px) {
     top: 0;
