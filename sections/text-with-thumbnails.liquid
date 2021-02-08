@@ -9,7 +9,7 @@
   }
 </style>
 
-<div class="container section--{{ section.id }} faqs-text">
+<div class="container section--{{ section.id }} text-with-thumbnails">
 
   <div class="grid__item wide--one-half post-large--one-half large--one-half medium--one-half small--one-whole">
     <div class="text-{{ section.settings.align_text }}">
@@ -29,24 +29,15 @@
         {% endif %}
 
     </div>
+
+    <div class="thumbs">
+      {% for block in section.blocks %}          
+        <img src="{{ block.settings.img | img_url: '400x' }}" alt="">  
+      {% endfor %} 
+    </div>
+
   </div>
 
-  <div class="grid__item shortcodes-section wide--one-half post-large--one-half large--one-half medium--one-half small--one-whole">
-    
-      <!--dt-sc-toggle-frame-set starts-->
-      <div class="dt-sc-toggle-frame-set">
-        {% for block in section.blocks %}          
-          <p class="dt-sc-toggle-accordion  {% if forloop.first == true %}active{% endif %}"><a href="#">{{ block.settings.title }}</a></p>
-          <div class="dt-sc-toggle-content {% if forloop.last %} last{% endif %}" {% if forloop.first == true %}style="display:block;"{% endif %}>
-            <div class="dt-sc-block">
-              {{ block.settings.description }}
-            </div>
-          </div>        
-        {% endfor %}           
-    </div>     
-      <!--dt-sc-toggle-frame-set ends-->
-  
-</div>
 </div>
 <div class="dt-sc-hr-invisible-medium"></div>
 
@@ -55,7 +46,7 @@
 
 {% schema %}
 {
-	"name": "FAQs text - FAQs",
+	"name": "Text w thumbs",
 	"max_blocks": 50,
 	"settings": [
     {
@@ -218,20 +209,13 @@
 	"blocks" : [
 		{
 			"type": "text",
-			"name": "FAQ",
+			"name": "Image",
 			"settings": [
 				{
-					"type": "text",
-					"id": "title",
-					"default": "Question",
-					"label": "Question"
-				},
-				{
-					"type": "textarea",
-					"id": "description",
-					"default": "Answer goes here...",
-					"label": "Text"
-				}
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        }
 			]
 		}
 	]	

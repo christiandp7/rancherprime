@@ -1,0 +1,23 @@
+.text-with-thumbnails {
+  .thumbs {
+    margin-top: 35px;
+    text-align: center;
+    .thumbs-inner {
+      display: inline-block;
+      margin: 0 auto;
+      padding: 1.5em;
+      background-color: rgb(64, 45, 34, 0.5);
+      img {
+        max-width: 300px;
+        @include media-min-width(901px) {
+          &:not(:last-child) {
+            margin-right: 1.5em;
+          }
+        }
+        @include media-max-width(900px) {
+          margin-bottom: 1.5em;
+        }
+      }
+    }
+  }
+}

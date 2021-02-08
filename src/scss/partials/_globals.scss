@@ -56,6 +56,19 @@
     width: 75px;
     bottom: -25px;
     left: 0;
-    border-bottom: solid 2px $color-accent-secondary;
+    border-bottom: solid 4px $color-accent-secondary;
+  }
+}
+
+.divider-dash {
+  &::after {
+    content: "";
+    // position: absolute;
+    display: block;
+    width: 75px;
+    bottom: -25px;
+    margin: 15px auto;
+    /* margin-right: 20px; */
+    border-bottom: solid 4px #e76222;
   }
 }

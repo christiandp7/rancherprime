@@ -42,7 +42,17 @@
   width: 75px;
   bottom: -25px;
   left: 0;
-  border-bottom: solid 2px #e76222;
+  border-bottom: solid 4px #e76222;
+}
+
+.divider-dash::after {
+  content: "";
+  display: block;
+  width: 75px;
+  bottom: -25px;
+  margin: 15px auto;
+  /* margin-right: 20px; */
+  border-bottom: solid 4px #e76222;
 }
 
 .top-bar-type-99 {
@@ -404,6 +414,30 @@
 }
 .blog-design-4 .blog-btn .btn__read-more:hover {
   border-color: #e76222;
+}
+
+.text-with-thumbnails .thumbs {
+  margin-top: 35px;
+  text-align: center;
+}
+.text-with-thumbnails .thumbs .thumbs-inner {
+  display: inline-block;
+  margin: 0 auto;
+  padding: 1.5em;
+  background-color: rgba(64, 45, 34, 0.5);
+}
+.text-with-thumbnails .thumbs .thumbs-inner img {
+  max-width: 300px;
+}
+@media screen and (min-width: 901px) {
+  .text-with-thumbnails .thumbs .thumbs-inner img:not(:last-child) {
+    margin-right: 1.5em;
+  }
+}
+@media screen and (max-width: 900px) {
+  .text-with-thumbnails .thumbs .thumbs-inner img {
+    margin-bottom: 1.5em;
+  }
 }
 
 .site-footer {
