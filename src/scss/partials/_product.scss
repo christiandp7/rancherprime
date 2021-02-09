@@ -1,0 +1,11 @@
+.related-products-container {
+  .border-title {
+    float: none;
+    &:after {
+      display: none !important;
+    }
+  }
+  .section-header__title {
+    float: none;
+  }
+}
