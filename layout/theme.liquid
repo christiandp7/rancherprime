@@ -405,7 +405,7 @@
 
   <main class="{% if template contains 'index' or template contains "about" %}main-home-content {% else %} main-content  {% endif %}">  
 
-    {% unless template contains "contact" or template contains "index" or template contains "about" or template contains "page" or template contains "blog" %}
+    {% unless template contains "contact" or template contains "index" or template contains "about" or template contains "page" or template contains "blog" or template contains "article" %}
     <div class="wrapper">
     {% endunless %}
 
@@ -440,7 +440,7 @@
         </div>
       {% endif %}
 
-      {% unless template contains 'index' or template contains 'page' or template contains 'blog' %}
+      {% unless template contains 'index' or template contains 'page' or template contains 'blog' or template contains 'article' %}
       <div class="grid-uniform">
         <div class="grid__item">  
           <div class="container-bg"> 
@@ -450,18 +450,18 @@
       </div>
       {% endunless %}
 
-      {% if template contains 'page' or template contains 'blog' %}
+      {% if template contains 'page' or template contains 'blog' or template contains 'article' %}
         <div class="grid__item">  
           {{ content_for_layout }}		          
         </div> 
       {% endif %}
       
 
-    {% unless template contains "contact" or template contains "index" or template contains "about" or template contains "page" or template contains "blog" %}
+    {% unless template contains "contact" or template contains "index" or template contains "about" or template contains "page" or template contains "blog" or template contains "article" %}
     </div>
     {% endunless %}
 
-    {% unless template contains "about" or template contains "index" or template contains 'page' or template contains 'blog'  %}
+    {% unless template contains "about" or template contains "index" or template contains 'page' or template contains 'blog' or template contains 'article'  %}
     <div class="dt-sc-hr-invisible-large"></div>
     {% endunless %}
     

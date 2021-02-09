@@ -125,9 +125,9 @@
 
 
   /* Menu  block */
-  {% unless template contains 'index' or template contains 'page' or template contains 'blog' %} {% if section.settings.menubar_bg_img != blank %} .header-type-8 .site-header__menubar,.header-type-8 .is-sticky .site-header__menubar  { background: url({{ section.settings.menubar_bg_img | img_url: 'master'  }});} {% else %}  .header-type-8 .site-header__menubar,.header-type-8 .is-sticky .site-header__menubar  { background:{{ section.settings.menubar_bg }}; } {% endif %} {% endunless %}
+  {% unless template contains 'index' or template contains 'page' or template contains 'blog' or template contains 'article' %} {% if section.settings.menubar_bg_img != blank %} .header-type-8 .site-header__menubar,.header-type-8 .is-sticky .site-header__menubar  { background: url({{ section.settings.menubar_bg_img | img_url: 'master'  }});} {% else %}  .header-type-8 .site-header__menubar,.header-type-8 .is-sticky .site-header__menubar  { background:{{ section.settings.menubar_bg }}; } {% endif %} {% endunless %}
 
-  {% if template contains 'index' or template contains 'page' or template contains 'blog' %}  {% if section.settings.menubar_bg_img != blank %}   .header-type-8 .is-sticky .site-header__menubar { background: url({{ section.settings.menubar_bg_img | img_url: 'master'  }});} {% else %} .header-type-8 .is-sticky .site-header__menubar,.mobile-nav-section  { background:{{ section.settings.menubar_bg }}; } {% endif %}{% endif %}
+  {% if template contains 'index' or template contains 'page' or template contains 'blog' or template contains 'article' %}  {% if section.settings.menubar_bg_img != blank %}   .header-type-8 .is-sticky .site-header__menubar { background: url({{ section.settings.menubar_bg_img | img_url: 'master'  }});} {% else %} .header-type-8 .is-sticky .site-header__menubar,.mobile-nav-section  { background:{{ section.settings.menubar_bg }}; } {% endif %}{% endif %}
   .header-type-8 .menu-tool ul li {color: {{ section.settings.menubar_text }};}
   .header-type-8 .menu-tool ul li a,.mobile-nav-section .mobile-nav-trigger {color:{{section.settings.menubar_links}};}  
   {% comment %}
@@ -186,7 +186,8 @@
 
     .template-index .header-type-8 .site-header, 
     .template-page .header-type-8 .site-header,
-    .template-blog .header-type-8 .site-header {
+    .template-blog .header-type-8 .site-header,
+    .template-article .header-type-8 .site-header, {
       background:{{section.settings.header_bg_clr}};
     }
 
@@ -198,13 +199,15 @@
 
     .template-index .header-type-8:hover .site-header, 
     .template-page .header-type-8:hover .site-header,
-    .template-blog .header-type-8:hover .site-header {  
+    .template-blog .header-type-8:hover .site-header,
+    .template-article .header-type-8:hover .site-header, {  
       {% if section.settings.show_bg_overlayclr %}background:{{ section.settings.header_bg_clr | color_modify: 'alpha', 0.7 }} {% else %}background:transparent{% endif %}
     }
     
     .template-index .header-type-8 .site-header, 
     .template-page .header-type-8 .site-header,
-    .template-blog .header-type-8 .site-header {  
+    .template-blog .header-type-8 .site-header,
+    .template-article .header-type-8 .site-header {  
       background:transparent 
     }
 
