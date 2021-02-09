@@ -1,0 +1,50 @@
+.cart-title {
+  margin-bottom: 50px;
+  h2 {
+    margin-bottom: 25px;
+  }
+}
+
+.cart-container {
+  background-color: #efdeca;
+
+  .cart__header-labels,
+  .cart__header-labels span {
+    float: none;
+  }
+  .cart__row {
+    background-color: #efdeca;
+    padding: 25px 25px;
+
+    &.cart__header-labels {
+      background-color: #d1c1af;
+      padding-bottom: 15px;
+      text-align: left;
+      .h4,
+      h4.cart__mini-labels {
+        margin-bottom: 0;
+        font-size: 1.3rem;
+        font-weight: bold;
+        font-family: "Playfair Display";
+      }
+    }
+
+    a:not(.btn),
+    .text-link,
+    p.shopping-checkout,
+    .h4,
+    .h5,
+    input:not(.btn) {
+      font-family: inherit;
+      color: #262525;
+      font-size: 1.1rem;
+    }
+    .btn {
+      border-width: 2px;
+      &:hover {
+        color: $color-accent-secondary;
+        border-width: 2px;
+      }
+    }
+  }
+}
